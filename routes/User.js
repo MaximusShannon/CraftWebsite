@@ -32,7 +32,7 @@ router.addUser = function (req, res) {
     users.push({userName: req.body.userName, email: req.body.email, password: req.body.password, bio: req.body.bio, id:id, profilePictureRef: req.body.profilePictureRef });
 
     if((currentSize+1) == users.length)
-        res.json({message: "User Added"});
+        res.json({message: "User Added", currentSize: users.length});
     else
         res.json({message: "User addition failed"});
 };
