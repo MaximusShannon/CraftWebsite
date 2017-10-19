@@ -3,6 +3,7 @@ var posts = [
     //************************* Cards/Paperwork *******************
     {
         title: "Edels Cards",
+        category: "Cards",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "Cards for all occasions",
         price: 7.99,
@@ -12,6 +13,7 @@ var posts = [
     },
     {
         title: "Trinas Cards",
+        category: "Cards",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "Cards for special Occasions",
         price: 15.99,
@@ -21,6 +23,7 @@ var posts = [
     },
     {
         title: "SadMan Cards",
+        category: "Cards",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "Cards for most bad occasions",
         price: 10.99,
@@ -28,12 +31,10 @@ var posts = [
         date: Date.now(),
         postId: 1002
     },
-    {
-
-    },
     //************************* Flowers *******************
     {
         title: "Damons Flowers",
+        category: "Flowers",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "Flowers made for you",
         price: 9.99,
@@ -43,6 +44,7 @@ var posts = [
     },
     {
         title: "Daynas Colourful Creations Flowers",
+        category: "Flowers",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "Flowers made for all occasions",
         price: 19.99,
@@ -52,6 +54,7 @@ var posts = [
     },
     {
         title: "Veroincas Flowers for deaths",
+        category: "Flowers",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "Flowers for deaths",
         price: 25.99,
@@ -62,6 +65,7 @@ var posts = [
     //************************* Cloths Work *******************
     {
         title: "Daynas Knitting",
+        category: "Textile",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "Specialised knitting for all reasons",
         price: 17.99,
@@ -71,6 +75,7 @@ var posts = [
     },
     {
         title: "Donas Animal Knitting",
+        category: "Textile",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "Specialised knitting for all reasons",
         price: 17.99,
@@ -80,6 +85,7 @@ var posts = [
     },
     {
         title: "Michaels Boys Cloths Knitting",
+        category: "Textile",
         imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
         infoTitle: "For boys school cloths",
         price: 49.99,
@@ -89,3 +95,5 @@ var posts = [
     }
 
 ];
+
+module.exports = posts;

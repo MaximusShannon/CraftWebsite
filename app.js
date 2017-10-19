@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 
 var user = require('./routes/User');
+var posts = require('./routes/Posts');
 
 var app = express();
 
@@ -30,6 +31,10 @@ app.get('/TemporaryUsers/:id', user.findOne);
 app.post('/TemporaryUsers', user.addUser);
 app.put('/TemporaryUsers/:id/bio', user.updateProfileBio);
 app.delete('/TemporaryUsers/:id', user.deleteUser);
+
+//Posts endpoints
+app.get('/TemporaryPosts', posts.findAllPosts);
+app.get('/TemporaryPosts/:tags', posts.findAllPostsByTag);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
