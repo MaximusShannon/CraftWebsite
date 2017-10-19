@@ -57,5 +57,39 @@ describe('Users', function () {
                 });
         });
     });
+
+    describe('POST /TemporaryUsers', function () {
+        it('Should add a new user to the array of users', function (done) {
+            var user = {
+              userName: "Damon Zund",
+              email: "Damo@hotmail.com",
+              password: "damon123",
+              bio: "i like cars",
+              id: 1234,
+              profilePictureRef: ""
+            };
+
+            chai.request(server)
+                .post('/TemporaryUsers')
+                .send(user)
+                .end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('User Added');
+                    done();
+                    after(function (done) {
+                        chai.request(server)
+                            .get('/TemporaryUsers')
+                            .end(function (err, res) {
+                                expect(res).to.have.status(200);
+                                expect(res.body).to.be.a('array');
+                                expect(res.body[2].userName).to.equal("Damon Zund");
+                                done();
+                            });
+                    });
+                });
+        });
+    });
+
+    
 });
 
