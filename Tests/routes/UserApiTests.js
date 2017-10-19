@@ -45,5 +45,17 @@ describe('Users', function () {
                 });
         });
     });
+    
+    describe('PUT /TemporaryUsers', function () {
+        it('Should update the users bio', function (done) {
+            chai.request(server)
+                .put('/TemporaryUsers/1000/bio')
+                .end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Bio updated');
+                    done();
+                });
+        });
+    });
 });
 
