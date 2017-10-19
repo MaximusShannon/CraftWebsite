@@ -28,11 +28,19 @@ describe('Users', function () {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
                     expect(res.body.length).to.equal(2);
-                    var result = _.map(res.body, function (user) {
-                        return {userName: user.userName, id: user.id};
-                    });
-                    expect(result).to.include({userName: "MaxShannon", id: 1000});
-                    expect(result).to.include({userName: "DaynaEarls", id: 1001});
+                    done();
+                });
+        });
+    });
+    describe('GET /TemporaryUsers/:id', function () {
+        it('should return the user with 1000 as an id', function (done) {
+            chai.request(server)
+                .get('/TemporaryUsers/1000')
+                .end(function (err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('object');
+                    expect(res.body.email).to.equal("maxshannon2016@hotmail.com");
+                    expect(res.body.userName).to.equal("MaxShannon");
                     done();
                 });
         });

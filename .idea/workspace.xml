@@ -2,67 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea35745-8373-427f-ba89-a61d85325d21" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/routes/UserApiTests.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getName.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getPathInfo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getPathValue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/hasProperty.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/History.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/lib/eql.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/node_modules/type-detect/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/node_modules/type-detect/History.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/node_modules/type-detect/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/node_modules/type-detect/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/node_modules/type-detect/lib/type.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/deep-eql/node_modules/type-detect/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/type-detect/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/type-detect/History.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/type-detect/ReleaseNotes.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/type-detect/lib/type.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/www" afterPath="$PROJECT_DIR$/bin/www" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/CODE_OF_CONDUCT.md" afterPath="$PROJECT_DIR$/node_modules/chai/CODE_OF_CONDUCT.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/node_modules/chai/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/README.md" afterPath="$PROJECT_DIR$/node_modules/chai/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/chai.js" afterPath="$PROJECT_DIR$/node_modules/chai/chai.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/karma.conf.js" afterPath="$PROJECT_DIR$/node_modules/chai/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/karma.sauce.js" afterPath="$PROJECT_DIR$/node_modules/chai/karma.sauce.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/assertion.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/assertion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/config.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/core/assertions.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/core/assertions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/assert.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/assert.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/expect.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/expect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/should.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/interface/should.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addChainableMethod.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addChainableMethod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addMethod.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addMethod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addProperty.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/addProperty.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/expectTypes.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/expectTypes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/flag.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/flag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getActual.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getActual.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getMessage.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/getMessage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/index.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/inspect.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/inspect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/objDisplay.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/objDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteChainableMethod.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteChainableMethod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteMethod.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteMethod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteProperty.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/overwriteProperty.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/test.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/transferFlags.js" afterPath="$PROJECT_DIR$/node_modules/chai/lib/chai/utils/transferFlags.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/package.json" afterPath="$PROJECT_DIR$/node_modules/chai/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/chai/sauce.browsers.js" afterPath="$PROJECT_DIR$/node_modules/chai/sauce.browsers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/deep-eql/README.md" afterPath="$PROJECT_DIR$/node_modules/deep-eql/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/deep-eql/index.js" afterPath="$PROJECT_DIR$/node_modules/deep-eql/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/deep-eql/package.json" afterPath="$PROJECT_DIR$/node_modules/deep-eql/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mocha/package.json" afterPath="$PROJECT_DIR$/node_modules/mocha/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/type-detect/README.md" afterPath="$PROJECT_DIR$/node_modules/type-detect/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/type-detect/index.js" afterPath="$PROJECT_DIR$/node_modules/type-detect/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/type-detect/package.json" afterPath="$PROJECT_DIR$/node_modules/type-detect/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/User.js" afterPath="$PROJECT_DIR$/routes/User.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/routes/UserApiTests.js" afterPath="$PROJECT_DIR$/Tests/routes/UserApiTests.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -119,8 +60,8 @@
       <file leaf-file-name="UserApiTests.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/routes/UserApiTests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="19" column="60" lean-forward="false" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+            <state relative-caret-position="365">
+              <caret line="43" column="27" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -181,8 +122,8 @@
         <option value="$PROJECT_DIR$/Tests/UserApiTests.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/Tests/routes/UserApiTests.js" />
         <option value="$PROJECT_DIR$/bin/www" />
+        <option value="$PROJECT_DIR$/Tests/routes/UserApiTests.js" />
       </list>
     </option>
   </component>
@@ -700,12 +641,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1508424448690</updated>
-      <workItem from="1508424449796" duration="7354000" />
+      <workItem from="1508424449796" duration="7937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7354000" />
+    <option name="totallyTimeSpent" value="7937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -829,8 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/routes/UserApiTests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="60" lean-forward="false" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+        <state relative-caret-position="365">
+          <caret line="43" column="27" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
           <folding />
         </state>
       </provider>
