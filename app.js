@@ -27,6 +27,7 @@ app.use('/', index);
 app.get('/TemporaryUsers', user.findAll);
 app.get('/TemporaryUsers/:id', user.findOne);
 app.post('/TemporaryUsers', user.addUser);
+app.put('/TemporaryUsers/:id/bio', user.updateProfileBio);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

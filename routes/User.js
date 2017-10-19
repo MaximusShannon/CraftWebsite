@@ -37,4 +37,16 @@ router.addUser = function (req, res) {
         res.json({message: "User addition failed"});
 };
 
+router.updateProfileBio = function (req, res) {
+
+    var user = getByValue(users, req.params.id);
+    var userOldBio = user.bio;
+
+    user.bio = req.body.bio;
+    if(userOldBio != user.bio)
+        res.json({message: "Bio updated"});
+    else
+        res.json({message: "Bio update failed."});
+};
+
 module.exports = router;
