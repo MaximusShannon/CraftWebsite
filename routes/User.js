@@ -25,4 +25,16 @@ router.findOne = function (req, res) {
         res.json({message: "Couldn't find user"});
 };
 
+router.addUser = function (req, res) {
+    var id = Math.floor((Math.random() * 1000) + 1);
+    var currentSize = users.length;
+
+    users.push({userName: req.body.userName, email: req.body.email, password: req.body.password, bio: req.body.bio, id:id, profilePictureRef: req.body.profilePictureRef });
+
+    if((currentSize+1) == users.length)
+        res.json({message: "User Added"});
+    else
+        res.json({message: "User addition failed"});
+};
+
 module.exports = router;

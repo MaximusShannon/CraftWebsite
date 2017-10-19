@@ -26,6 +26,7 @@ app.use('/', index);
 
 app.get('/TemporaryUsers', user.findAll);
 app.get('/TemporaryUsers/:id', user.findOne);
+app.post('/TemporaryUsers', user.addUser);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
