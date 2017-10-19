@@ -49,4 +49,17 @@ router.updateProfileBio = function (req, res) {
         res.json({message: "Bio update failed."});
 };
 
+router.deleteUser = function(req, res){
+  var user = getByValue(users, req.params.id);
+  var index = users.indexOf(user);
+
+  var currentSize = users.length;
+  users.splice(index, 1);
+
+  if((currentSize-1) == users.length)
+      res.json({message: 'User Deleted'});
+  else
+      res.json({message: 'User not deleted'});
+};
+
 module.exports = router;

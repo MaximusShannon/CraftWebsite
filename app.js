@@ -24,10 +24,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 
+//User endpoints
 app.get('/TemporaryUsers', user.findAll);
 app.get('/TemporaryUsers/:id', user.findOne);
 app.post('/TemporaryUsers', user.addUser);
 app.put('/TemporaryUsers/:id/bio', user.updateProfileBio);
+app.delete('/TemporaryUsers/:id', user.deleteUser);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
