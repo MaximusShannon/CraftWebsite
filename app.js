@@ -34,7 +34,13 @@ app.delete('/TemporaryUsers/:id', user.deleteUser);
 
 //Posts endpoints
 app.get('/TemporaryPosts', posts.findAllPosts);
-app.get('/TemporaryPosts/:tags', posts.findAllPostsByTag);
+app.get('/TemporaryPostsByTags/:tags', posts.findAllPostsByTag);
+app.get('/TemporaryPostsByLowerPrice/:price', posts.findAllLessThanPrice);
+
+
+//come back to this
+//save for extra marks maybe? ;)
+//app.get('TemporaryPostsCategory/:id/category', posts.findCategoryFuzzySearch);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
