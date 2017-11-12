@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ea35745-8373-427f-ba89-a61d85325d21" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="3ea35745-8373-427f-ba89-a61d85325d21" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -106,7 +103,7 @@
           <file leaf-file-name="PostApiTests.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Tests/routes/PostApiTests.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="16">
+                <state relative-caret-position="-888">
                   <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
                   <folding />
                 </state>
@@ -190,7 +187,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-181" />
     <option name="y" value="38" />
     <option name="width" value="1936" />
@@ -2235,12 +2232,12 @@
       <workItem from="1508591620677" duration="11000" />
       <workItem from="1508591660599" duration="3099000" />
       <workItem from="1510491180898" duration="16982000" />
-      <workItem from="1510516243599" duration="43000" />
+      <workItem from="1510516243599" duration="634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41708000" />
+    <option name="totallyTimeSpent" value="42299000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2252,7 +2249,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1085353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -2646,7 +2643,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/routes/PostApiTests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
+        <state relative-caret-position="-888">
           <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding />
         </state>
