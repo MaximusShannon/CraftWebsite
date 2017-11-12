@@ -7,8 +7,8 @@ var _ = require('lodash');
 
 //********************** Support Functions **********************
 
-function getByValue(arr, id){
-    var result = arr.filter(function(t){return t.id == id;});
+function getByValue(arr, postId){
+    var result = arr.filter(function(t){return t.postId == postId;});
 
     return result ? result[0] : null;
 }
@@ -18,6 +18,16 @@ function getByValue(arr, id){
 
 router.findAllPosts = function (req, res) {
     res.json(posts);
+};
+
+router.findOne = function (req, res) {
+    var post = getByValue(posts, req.params.postId);
+
+    if(post != null)
+        res.json(post);
+    else
+        res.json({message: "Couldn't find post"});
+
 };
 
 router.findAllPostsByTag = function (req, res) {
@@ -34,7 +44,7 @@ router.findAllPostsByTag = function (req, res) {
     if(postsWithTag.length != 0)
         res.json(postsWithTag);
     else
-        res.json({message: "No users with these search criteria"});
+        res.json({message: "No posts with these search criteria"});
 };
 
 router.findAllLessThanPrice = function (req, res) {
@@ -50,7 +60,7 @@ router.findAllLessThanPrice = function (req, res) {
     if(pricesMatched.length > 0)
         res.json(pricesMatched);
     else
-        res.json({message: 'No Posts Found'});
+        res.json({message: 'No Posts Found with price lower than: ' + priceRequest});
 };
 
 // router.findCategoryFuzzySearch = function (req, res) {

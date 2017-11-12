@@ -34,6 +34,7 @@ app.delete('/TemporaryUsers/:id', user.deleteUser);
 
 //Posts endpoints
 app.get('/TemporaryPosts', posts.findAllPosts);
+app.get('/TemporaryPosts/:postId', posts.findOne);
 app.get('/TemporaryPostsByTags/:tags', posts.findAllPostsByTag);
 app.get('/TemporaryPostsByLowerPrice/:price', posts.findAllLessThanPrice);
 
