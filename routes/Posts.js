@@ -1,11 +1,23 @@
 var posts = require('../Models/TemporaryPosts');
 var express = require('express');
 var router = express.Router();
-var fuzzy = require('fuzzy');
+var mongoose = require('mongoose');
 
-var _ = require('lodash');
+//********************** Mongo Connection ********************** //
 
-//********************** Support Functions **********************
+mongoose.connect('mongodb://localhost:27017/craftdatabase');
+
+var db = mongoose.connection;
+
+db.on('error', function (err) {
+    console.log('connection error', err)
+});
+
+db.once('open', function () {
+   console.log('Connection Successful');
+});
+
+//********************** Support Functions ********************** //
 
 function getByValue(arr, postId){
     var result = arr.filter(function(t){return t.postId == postId;});
