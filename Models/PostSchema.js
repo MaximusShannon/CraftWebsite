@@ -19,12 +19,10 @@ var PostSchema = new Schema({
     date: {
         type: Date,
         required: true,
-        default: Date.now
+        default: Date.now()
     },
-    id: {
-        type: Number,
-        required: true,
-        unique: true
+    tags: {
+        type: String
     }
 });
 

@@ -33,10 +33,10 @@ app.put("/TemporaryUsers/:id/bio", user.updateProfileBio);
 app.delete("/TemporaryUsers/:id", user.deleteUser);
 
 //Posts endpoints
-app.get("/TemporaryPosts", posts.findAllPosts);
-app.get("/TemporaryPosts/:postId", posts.findOne);
-app.get("/TemporaryPostsByTags/:tags", posts.findAllPostsByTag);
-app.get("/TemporaryPostsByLowerPrice/:price", posts.findAllLessThanPrice);
+app.get("/posts", posts.findAllPosts);
+app.get("/posts/:id", posts.findOne);
+app.get("/postsbytags/:tags", posts.findAllPostsByTag);
+app.get("/postsbylowerprice/:price", posts.findAllLessThanPrice);
 
 
 //come back to this

@@ -1,7 +1,8 @@
-var posts = require('../Models/TemporaryPosts');
+
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var Post = require('../Models/PostSchema');
 
 //********************** Mongo Connection ********************** //
 
@@ -19,60 +20,94 @@ db.once('open', function () {
 
 //********************** Support Functions ********************** //
 
-function getByValue(arr, postId){
-    var result = arr.filter(function(t){return t.postId == postId;});
+// function getByValue(arr, postId){
+//     var result = arr.filter(function(t){return t.postId == postId;});
+//
+//     return result ? result[0] : null;
+// }
 
-    return result ? result[0] : null;
+function findAllPostsByTagGiven(allPosts, searchTag){
+
+    var postsWithTag = [];
+    var comparitiveTag;
+
+    for(var i = 0; i < allPosts.length; i++){
+        comparitiveTag = allPosts[i].tags.toLowerCase();
+
+        if(comparitiveTag.indexOf(searchTag) != -1)
+            postsWithTag.push(allPosts[i]);
+    }
+
+    return postsWithTag;
+
 }
 
+function findAllPostsLowerThanPriceGiven(allPosts, searchPrice){
+     
+    var postsWithRequiredPrice = [];
 
+    for(var i = 0; i < allPosts.length; i++){
+        if(allPosts[i].price < searchPrice)
+            postsWithRequiredPrice.push(allPosts[i])
+
+    }
+
+    return postsWithRequiredPrice;
+
+}
 //********************** Router Functions **********************
 
 router.findAllPosts = function (req, res) {
-    res.json(posts);
+
+    Post.find(function (err, posts) {
+        if(err)
+            res.send(err);
+
+        res.json(posts);
+    });
+
 };
 
 router.findOne = function (req, res) {
-    var post = getByValue(posts, req.params.postId);
 
-    if(post != null)
-        res.json(post);
-    else
-        res.json({message: "Couldn't find post"});
+    Post.find({"_id": req.params.id}, function (err, post) {
+
+        if(err)
+            res.json({message: 'Post not found with id: ' +  req.params.id});
+        else
+            res.json(post);
+    });
 
 };
 
+// Post filtering endpoints
+
 router.findAllPostsByTag = function (req, res) {
-    var postsWithTag = [];
-    var searchTag = req.params.tags;
 
-    for(var i = 0; i < posts.length; i++){
-        var currentTags = posts[i].tags;
+    Post.find(function(err, posts){
+        console.log(posts[1].price);
 
-        if(currentTags.indexOf(searchTag) != -1)
-            postsWithTag.push(posts[i]);
-    }
+       var postsFound = findAllPostsByTagGiven(posts, req.params.tags.toLowerCase());
+       if(postsFound.length !== 0)
+           res.json(postsFound);
+       else
+           res.json({message: 'No posts found with tag: ' + req.params.tags})
 
-    if(postsWithTag.length != 0)
-        res.json(postsWithTag);
-    else
-        res.json({message: "No posts with these search criteria"});
+    });
+
 };
 
 router.findAllLessThanPrice = function (req, res) {
-    var pricesMatched = [];
-    var priceRequest = req.params.price;
 
-    for(var i = 0; i < posts.length; i++){
+    Post.find(function (err, posts){
 
-        if(posts[i].price < priceRequest)
-            pricesMatched.push(posts[i])
-    }
+        var postsFound = findAllPostsLowerThanPriceGiven(posts, req.params.price);
+        if(postsFound.length !== 0)
+            res.json(postsFound);
+        else
+            res.json({message: 'No posts found with price lower than: ' + req.params.price})
+    });
 
-    if(pricesMatched.length > 0)
-        res.json(pricesMatched);
-    else
-        res.json({message: 'No Posts Found with price lower than: ' + priceRequest});
 };
 
 // router.findCategoryFuzzySearch = function (req, res) {
