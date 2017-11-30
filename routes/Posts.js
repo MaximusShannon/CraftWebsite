@@ -20,12 +20,6 @@ db.once('open', function () {
 
 //********************** Support Functions ********************** //
 
-// function getByValue(arr, postId){
-//     var result = arr.filter(function(t){return t.postId == postId;});
-//
-//     return result ? result[0] : null;
-// }
-
 function findAllPostsByTagGiven(allPosts, searchTag){
 
     var postsWithTag = [];

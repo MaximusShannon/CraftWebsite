@@ -26,11 +26,11 @@ app.use(express.static(path.join(__dirname, "public")));
 //app.use('/', index);
 
 //User endpoints
-app.get("/TemporaryUsers", user.findAll);
-app.get("/TemporaryUsers/:id", user.findOne);
-app.post("/TemporaryUsers", user.addUser);
+app.get("/users", user.findAll);
+app.get("/users/:id", user.findOne);
+app.post("/adduser", user.addUser);
 app.put("/TemporaryUsers/:id/bio", user.updateProfileBio);
-app.delete("/TemporaryUsers/:id", user.deleteUser);
+app.delete("/deleteuser/:id", user.deleteUser);
 
 //Posts endpoints
 app.get("/posts", posts.findAllPosts);
