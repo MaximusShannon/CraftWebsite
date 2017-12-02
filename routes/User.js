@@ -56,7 +56,7 @@ router.addUser = function (req, res) {
     user.userName = req.body.userName;
     user.email = req.body.email;
     user.password = user.generateHash(req.body.password);
-    user.bio = req.body.params;
+    user.bio = " ";
     user.profilePictureRef = req.body.profilePictureRef;
 
     user.save(function (err) {
