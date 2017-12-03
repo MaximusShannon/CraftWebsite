@@ -23,6 +23,10 @@ var PostSchema = new Schema({
     },
     tags: {
         type: String
+    },
+    featured: {
+        type: Boolean,
+        default: false
     }
 });
 

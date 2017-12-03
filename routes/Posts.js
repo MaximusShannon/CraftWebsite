@@ -36,6 +36,8 @@ function findAllPostsByTagGiven(allPosts, searchTag){
 
 }
 
+
+
 function findAllPostsLowerThanPriceGiven(allPosts, searchPrice){
      
     var postsWithRequiredPrice = [];
@@ -49,6 +51,26 @@ function findAllPostsLowerThanPriceGiven(allPosts, searchPrice){
     return postsWithRequiredPrice;
 
 }
+
+function selectRandomizedFeaturedPosts(allPosts){
+
+    var randomFeatured = [];
+    var counter = 0;
+
+    for(var i = 0; counter <= 3; i++){
+        var rand = allPosts[Math.floor(Math.random() * allPosts.length)];
+        if(rand.featured){
+            randomFeatured.push(rand);
+            counter++
+        }
+
+        if(i > 100)
+            break;
+    }
+
+    return randomFeatured;
+}
+
 //********************** Router Functions **********************
 
 router.findAllPosts = function (req, res) {
@@ -59,6 +81,18 @@ router.findAllPosts = function (req, res) {
 
         res.json(posts);
     });
+
+};
+
+router.findRandomizedFeaturedPosts = function (req, res) {
+
+    Post.find(function (err, posts) {
+
+        if(err)
+            res.json(err);
+
+        res.json(selectRandomizedFeaturedPosts(posts))
+    })
 
 };
 

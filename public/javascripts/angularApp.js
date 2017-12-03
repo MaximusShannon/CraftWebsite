@@ -14,6 +14,11 @@ app.config(function ($routeProvider) {
             controller: 'createCraftController'
          })
 
+        .when('/browsecrafts', {
+            templateUrl: 'pages/browsecrafts.ejs',
+            controller: 'browseCraftsController'
+        })
+
         .when('/registeruser', {
            templateUrl: 'pages/registeruser.ejs',
             controller: 'registerUserController'

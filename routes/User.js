@@ -39,7 +39,7 @@ router.findAll = function (req, res) {
 
 router.findOne = function (req, res) {
 
-    User.find({"_id": req.parms.id}, function (err, user) {
+    User.find({"_id": req.params.id}, function (err, user) {
 
         if(err)
             res.json({message: 'User with id: ' + req.params.id + ' not found!'});
@@ -47,6 +47,18 @@ router.findOne = function (req, res) {
             res.json(user);
 
     });
+
+};
+
+router.findByUserName = function (req, res) {
+
+    User.find({"userName": req.params.userName}, function (err, user) {
+
+        if(err)
+            res.json({message: 'User with username: ' + req.params.userName + ' not found!'})
+        else
+            res.json(user);
+    })
 
 };
 
