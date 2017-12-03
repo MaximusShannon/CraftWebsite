@@ -34,11 +34,13 @@ app.post("/adduser", user.addUser);
 app.put("/TemporaryUsers/:id/bio", user.updateProfileBio);
 app.delete("/deleteuser/:id", user.deleteUser);
 
-//Posts endpoints
+//Posts / Craft endpoints
 app.get("/posts", posts.findAllPosts);
 app.get("/posts/:id", posts.findOne);
 app.get("/postsbytags/:tags", posts.findAllPostsByTag);
 app.get("/postsbylowerprice/:price", posts.findAllLessThanPrice);
+
+app.post('/addcraft', posts.addCraft);
 
 
 //come back to this

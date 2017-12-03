@@ -13,8 +13,6 @@ app.controller('registerUserController', ['$scope', '$location', '$http', functi
 
     $scope.addUser = function () {
 
-        //get the data
-
         $http.post('/adduser', $scope.formData)
             .success(function (data) {
                 $scope.user = data;

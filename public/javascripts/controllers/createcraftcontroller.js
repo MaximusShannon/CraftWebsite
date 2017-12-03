@@ -1,21 +1,22 @@
 var app = angular.module('CraftWebApplication');
 
-app.controller('createCraftController', ['$scope', '$http', function ($scope, $http) {
+app.controller('createCraftController', ['$scope', '$location', '$http', function ($scope,$location,$http) {
 
     $scope.message = 'Create Craft page';
+    $scope.formData = {};
 
-    findAllPosts();
+    $scope.addCraft = function () {
 
-    function findAllPosts() {
-        $http.get('/posts')
+        $http.post('/addcraft', $scope.formData)
             .success(function (data) {
-                $scope.posts = data;
-               console.log(data);
+                $scope.post = data;
+                $location.path('/posts');
+                console.log(data);
             })
-
-            .error(function (data) {
-                console.log("least it did something" + data);
+            ._error(function (data) {
+                console.log('Error:' + data);
             });
     }
+
 
 }]);

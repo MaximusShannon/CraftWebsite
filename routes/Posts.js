@@ -72,6 +72,7 @@ function selectRandomizedFeaturedPosts(allPosts){
 }
 
 //********************** Router Functions **********************
+//Gets
 
 router.findAllPosts = function (req, res) {
 
@@ -84,17 +85,7 @@ router.findAllPosts = function (req, res) {
 
 };
 
-router.findRandomizedFeaturedPosts = function (req, res) {
 
-    Post.find(function (err, posts) {
-
-        if(err)
-            res.json(err);
-
-        res.json(selectRandomizedFeaturedPosts(posts))
-    })
-
-};
 
 router.findOne = function (req, res) {
 
@@ -137,6 +128,47 @@ router.findAllLessThanPrice = function (req, res) {
     });
 
 };
+
+router.findRandomizedFeaturedPosts = function (req, res) {
+
+    Post.find(function (err, posts) {
+
+        if(err)
+            res.json(err);
+
+        res.json(selectRandomizedFeaturedPosts(posts))
+    })
+
+};
+
+//end gets
+
+//Posts
+
+router.addCraft = function (req, res) {
+
+    var craft = new Post();
+    craft.title = req.body.title;
+    craft.infoTitle = req.body.infoTitle;
+    craft.price = req.body.price;
+    craft.description = req.body.description;
+    craft.tags = req.body.tags;
+    craft.featured = req.body.featured;
+    craft.category = req.body.category;
+
+    craft.save(function (err) {
+        if(err)
+            res.send(err);
+        else
+            res.send({message: 'Craft Created', data: craft});
+
+
+
+    });
+
+};
+
+
 
 // router.findCategoryFuzzySearch = function (req, res) {
 //     //var postsMatchVsFuzzy = [];

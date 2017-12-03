@@ -27,6 +27,10 @@ var PostSchema = new Schema({
     featured: {
         type: Boolean,
         default: false
+    },
+    category: {
+        type: String,
+        required: true
     }
 });
 
