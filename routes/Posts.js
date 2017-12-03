@@ -4,6 +4,8 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Post = require('../Models/PostSchema');
 
+
+
 //********************** Mongo Connection ********************** //
 
 mongoose.connect('mongodb://localhost:27017/craftdatabase');
@@ -17,6 +19,10 @@ db.on('error', function (err) {
 db.once('open', function () {
    console.log('Connection Successful');
 });
+
+
+
+
 
 //********************** Support Functions ********************** //
 
@@ -35,8 +41,6 @@ function findAllPostsByTagGiven(allPosts, searchTag){
     return postsWithTag;
 
 }
-
-
 
 function findAllPostsLowerThanPriceGiven(allPosts, searchPrice){
      
@@ -71,8 +75,22 @@ function selectRandomizedFeaturedPosts(allPosts){
     return randomFeatured;
 }
 
+function findAllPostsByCategory(allPosts, category){
+
+    var postsMatched = [];
+
+    for(var i = 0; i < allPosts.length; i++){
+
+        if(allPosts[i].category === category)
+            postsMatched.push(postsMatched);
+    }
+
+    return postsMatched;
+}
+
+
+
 //********************** Router Functions **********************
-//Gets
 
 router.findAllPosts = function (req, res) {
 
@@ -85,8 +103,6 @@ router.findAllPosts = function (req, res) {
 
 };
 
-
-
 router.findOne = function (req, res) {
 
     Post.find({"_id": req.params.id}, function (err, post) {
@@ -98,6 +114,8 @@ router.findOne = function (req, res) {
     });
 
 };
+
+
 
 // Post filtering endpoints
 
@@ -141,9 +159,22 @@ router.findRandomizedFeaturedPosts = function (req, res) {
 
 };
 
-//end gets
+router.findAllCraftsByCertainCategory = function (req, res) {
 
-//Posts
+    Post.find(function (err, posts) {
+
+        if(err)
+            res.json(err);
+
+        return findAllPostsByCategory(posts, req.params.category)
+
+    });
+
+};
+
+
+
+//Post add endpoints
 
 router.addCraft = function (req, res) {
 
@@ -168,8 +199,6 @@ router.addCraft = function (req, res) {
 
 };
 
-
-
 // router.findCategoryFuzzySearch = function (req, res) {
 //     //var postsMatchVsFuzzy = [];
 //     var searchCriteria = req.params.category;
@@ -177,5 +206,8 @@ router.addCraft = function (req, res) {
 //     var results = fuzzy.filter(searchCriteria, posts);
 //     console.log(results);
 // };
+
+
+
 
 module.exports = router;

@@ -1,6 +1,5 @@
 var express = require("express");
 var path = require("path");
-var favicon = require("serve-favicon");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
@@ -27,6 +26,8 @@ app.use('/', routes);
 app.use('/User', user);
 app.use('/Posts', posts);
 
+
+
 //User endpoints
 app.get("/users", user.findAll);
 app.get("/users/:id", user.findOne);
@@ -34,13 +35,17 @@ app.post("/adduser", user.addUser);
 app.put("/TemporaryUsers/:id/bio", user.updateProfileBio);
 app.delete("/deleteuser/:id", user.deleteUser);
 
-//Posts / Craft endpoints
+
+
+//Posts
 app.get("/posts", posts.findAllPosts);
 app.get("/posts/:id", posts.findOne);
 app.get("/postsbytags/:tags", posts.findAllPostsByTag);
 app.get("/postsbylowerprice/:price", posts.findAllLessThanPrice);
-
+app.get('/postsbycategory/:category', posts.findAllCraftsByCertainCategory);
 app.post('/addcraft', posts.addCraft);
+
+
 
 
 //come back to this

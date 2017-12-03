@@ -7,6 +7,7 @@ app.controller('browseCraftsController', ['$scope', '$http', function($scope, $h
 
 
     function findAllPosts() {
+
         $http.get('/posts')
             .success(function (data) {
                 $scope.posts = data;

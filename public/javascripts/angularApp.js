@@ -25,8 +25,16 @@ app.config(function ($routeProvider) {
         })
 
         .when('/registeruser', {
-           templateUrl: 'pages/registeruser.ejs',
+            templateUrl: 'pages/registeruser.ejs',
             controller: 'registerUserController'
-        });
+        })
+
+        //sections
+        .when('/homecraftsection', {
+            templareUrl: 'pages/homecraftsection.ejs',
+            controller: 'homeCraftController'
+        })
+
+
 
 });
