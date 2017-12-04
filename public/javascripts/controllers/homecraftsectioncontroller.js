@@ -21,4 +21,19 @@ app.controller('homeCraftSectionController', ['$scope', '$http', function ($scop
             })
     }
 
+    $scope.delete = function (id) {
+
+        if(confirm("Are you sure you want to delete this Post?")){
+
+            $http.delete('/deletepost/' + id)
+                .success(function (data) {
+                    findAllCraftsByCertainCategory($scope.message);
+                })
+
+                .error(function (data) {
+                    console.log('Error' + data)
+                });
+        }
+    }
+
 }]);

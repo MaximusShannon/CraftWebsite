@@ -44,6 +44,9 @@ app.get("/postsbytags/:tags", posts.findAllPostsByTag);
 app.get("/postsbylowerprice/:price", posts.findAllLessThanPrice);
 app.get('/postsbycategory/:category', posts.findAllCraftsByCertainCategory);
 app.post('/addcraft', posts.addCraft);
+app.delete('/deletepost/:id', posts.deletePost);
+
+
 
 
 

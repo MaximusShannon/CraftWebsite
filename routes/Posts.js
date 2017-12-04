@@ -207,6 +207,17 @@ router.addCraft = function (req, res) {
 //     console.log(results);
 // };
 
+router.deletePost = function (req, res) {
+
+  Post.findByIdAndRemove(req.params.id, function (err) {
+
+      if(err)
+          res.json(err);
+      else
+          res.json({message: 'Post Deleted', data: Post});
+  })
+};
+
 
 
 
