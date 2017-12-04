@@ -11,7 +11,6 @@ app.controller('browseCraftsController', ['$scope', '$http', function($scope, $h
         $http.get('/posts')
             .success(function (data) {
                 $scope.posts = data;
-                console.log(data);
             })
 
             .error(function (data) {

@@ -82,7 +82,7 @@ function findAllPostsByCategory(allPosts, category){
     for(var i = 0; i < allPosts.length; i++){
 
         if(allPosts[i].category === category)
-            postsMatched.push(postsMatched);
+            postsMatched.push(allPosts[i]);
     }
 
     return postsMatched;
@@ -166,7 +166,7 @@ router.findAllCraftsByCertainCategory = function (req, res) {
         if(err)
             res.json(err);
 
-        return findAllPostsByCategory(posts, req.params.category)
+        res.json(findAllPostsByCategory(posts, req.params.category));
 
     });
 

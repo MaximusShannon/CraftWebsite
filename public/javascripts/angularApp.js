@@ -31,9 +31,9 @@ app.config(function ($routeProvider) {
 
         //sections
         .when('/homecraftsection', {
-            templareUrl: 'pages/homecraftsection.ejs',
-            controller: 'homeCraftController'
-        })
+            templateUrl: 'pages/homecraftsection.ejs',
+            controller: 'homeCraftSectionController'
+        });
 
 
 
