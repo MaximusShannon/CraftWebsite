@@ -1,6 +1,6 @@
 var app = angular.module('CraftWebApplication');
 
-app.controller('homeCraftSectionController', ['$scope', '$http', function ($scope, $http) {
+app.controller('homeCraftSectionController', ['$scope', '$http', '$location', 'craftService', function ($scope, $http, $location, craftService) {
 
     $scope.message = 'Home Crafts';
     //$scope.listSize = $scope.posts.keys($scope.post).length;
@@ -34,6 +34,17 @@ app.controller('homeCraftSectionController', ['$scope', '$http', function ($scop
                     console.log('Error' + data)
                 });
         }
+    }
+
+    $scope.updatePost = function (post_from_page) {
+
+        craftService.title = post_from_page.title;
+
+        console.log("craftService.title: "+craftService.title);
+        $location.path('/update');
+
+
+
     }
 
 }]);

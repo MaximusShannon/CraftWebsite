@@ -1,8 +1,26 @@
 var app = angular.module('CraftWebApplication', ['ngRoute']);
 
+app.service('craftService', function () {
+
+    var craftService = {
+        title: "",
+        imageReferences: [],
+        infoTitle: "",
+        price: "",
+        description: "",
+        date: "",
+        tags: "",
+        featured: "false",
+        category: "",
+        id: ""
+    };
+
+    return craftService;
+
+});
+
 app.config(function ($routeProvider) {
     $routeProvider
-
 
         .when('/',{
            templateUrl: 'pages/home.ejs',
@@ -27,6 +45,11 @@ app.config(function ($routeProvider) {
         .when('/registeruser', {
             templateUrl: 'pages/registeruser.ejs',
             controller: 'registerUserController'
+        })
+
+        .when('/update', {
+            templateUrl: 'pages/update.ejs',
+            controller: 'updatePageController'
         })
 
         //sections

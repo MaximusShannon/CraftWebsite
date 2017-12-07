@@ -218,7 +218,4 @@ router.deletePost = function (req, res) {
   })
 };
 
-
-
-
 module.exports = router;
