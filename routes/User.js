@@ -107,4 +107,23 @@ router.deleteUser = function(req, res){
 
 };
 
+router.authenticateUser = function (req, res) {
+
+    console.log("inside login");
+    console.log(req.params.email, req.params.password + " got here ");
+    User.findOne({email: req.body.email}, function (err, user) {
+
+        if(err){
+            res.json(err);
+        }else{
+            if(!user.validPassword(req.body.password)){
+                res.json({message: 'Password did not match'});
+            }
+            else{
+                res.json(user);
+            }
+        }
+    });
+};
+
 module.exports = router;

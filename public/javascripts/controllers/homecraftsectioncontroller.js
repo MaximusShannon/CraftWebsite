@@ -4,6 +4,7 @@ app.controller('homeCraftSectionController', ['$scope', '$http', '$location', 'c
 
     $scope.message = 'Home Crafts';
     //$scope.listSize = $scope.posts.keys($scope.post).length;
+    $scope.formData = {};
 
     findAllCraftsByCertainCategory($scope.message);
 
@@ -36,15 +37,21 @@ app.controller('homeCraftSectionController', ['$scope', '$http', '$location', 'c
         }
     }
 
-    $scope.updatePost = function (post_from_page) {
+    $scope.updatePost = function (postFromPage) {
 
-        craftService.title = post_from_page.title;
+        craftService.title = postFromPage.title;
+        craftService.imageReferences.push(postFromPage);
+        craftService.infoTitle = postFromPage.infoTitle;
+        craftService.price = postFromPage.price;
+        craftService.description = postFromPage.description;
+        craftService.date = postFromPage.date;
+        craftService.tags = postFromPage.tags;
+        craftService.featured = postFromPage.featured;
+        craftService.category = postFromPage.category;
+        craftService.id = postFromPage._id;
 
-        console.log("craftService.title: "+craftService.title);
+        console.log("craftService.title: " + craftService.title);
         $location.path('/update');
-
-
-
     }
 
 }]);

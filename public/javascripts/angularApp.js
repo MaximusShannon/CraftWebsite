@@ -19,12 +19,25 @@ app.service('craftService', function () {
 
 });
 
+app.service('userService', function () {
+
+    var userService = {
+        userName: "",
+        email: "",
+        password: "",
+        bio: "",
+        profilePictureRef: ""
+    };
+
+    return userService;
+});
+
 app.config(function ($routeProvider) {
     $routeProvider
 
-        .when('/',{
+        .when('/home',{
            templateUrl: 'pages/home.ejs',
-           controller : 'mainController'
+           controller : 'homePageController'
         })
 
         .when('/createyourowncraft', {

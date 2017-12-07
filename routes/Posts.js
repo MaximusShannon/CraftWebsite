@@ -192,9 +192,6 @@ router.addCraft = function (req, res) {
             res.send(err);
         else
             res.send({message: 'Craft Created', data: craft});
-
-
-
     });
 
 };
@@ -206,6 +203,38 @@ router.addCraft = function (req, res) {
 //     var results = fuzzy.filter(searchCriteria, posts);
 //     console.log(results);
 // };
+
+//Post delete/update
+
+router.updatePost = function (req, res) {
+
+    Post.findById(req.params.id, function (err, post) {
+
+        if(err){
+            res.json({message: 'Post not found'});
+        }
+        else{
+            post.title = req.body.title;
+            post.infoTitle = req.body.infoTitle;
+            post.price = req.body.price;
+            post.description = req.body.description;
+            post.tags = req.body.tags;
+            post.featured = req.body.featured;
+            post.category = req.body.category;
+
+            post.save(function (err) {
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    res.json({message: 'Post successfully updated'})
+                }
+
+            })
+        }
+
+    });
+};
 
 router.deletePost = function (req, res) {
 

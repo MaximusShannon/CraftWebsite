@@ -1,7 +1,13 @@
 var app = angular.module('CraftWebApplication');
 
-app.controller('homePageController', ['$scope', function ($scope) {
+app.controller('homePageController', ['$scope', 'userService', function ($scope, userService) {
 
-    $scope.message = "Home Page"
+    $scope.message = 'name: ' + userService.userName;
+    $scope.formData = userService;
+
+
+    console.log("here");
+
+
 
 }]);

@@ -1,6 +1,150 @@
 
+<style>
+
+    .formOption{
+        padding: 20px;
+    }
+
+    input[type=text], select{
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 50%;
+        display: inline-block;
+    }
+
+    input[type=submit]{
+        width: 50%;
+        background-color: red;
+        color: white;
+        padding: 14px 20px;
+        margin:8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+    }
+
+    /*.row{*/
+        /*background-color: red;*/
+    /*}*/
+</style>
+
 <div ng-controller="updatePageController">
 
-    <p>{{message}}</p>
+
+
+    <div class="container">
+
+        <div class="row" align="center">
+
+            <div class="col-md-12">
+                <h3>Update Post</h3>
+                <hr style="border: 1px solid red">
+
+                <form ng-sumbit="updatePost()">
+
+                    <!--Craft Category-->
+                    <div class = "formOption">
+                        <label for ="craftCategory">Craft Category</label><br>
+                        <select ng-model="formData.category">
+                            <option>Home Crafts</option>
+                            <option>Wood Crafts</option>
+                            <option>Metal Crafts</option>
+                            <option>Paper Crafts</option>
+                            <option>Fabric Crafts</option>
+                            <option>Other Crafts</option>
+                        </select>
+                    </div>
+
+                    <!-- Craft Title-->
+                    <div class ="formOption">
+                        <label for ="craftTitle">Craft Title</label><br>
+                        <input type="text" id="craftTitle" name="craftTitle" value="hup" ng-model="formData.title"><br>
+                    </div>
+
+
+
+                    <!--Craft Sub title-->
+                    <div class = "formOption">
+                        <label for ="craftSubTitle">Craft Info Title</label><br>
+                        <input type="text" id="craftSubTitle" name="craftSubTitle" placeholder="A subtitle for your craft" ng-model="formData.infoTitle"?><br>
+                    </div>
+
+
+
+
+                    <!--Craft Price-->
+                    <div class = "formOption">
+                        <label for = "craftPrice">Craft price</label><br>
+                        <input style="width: 25%" type ="text" id="craftPrice" name="craftPrice" placeholder="Price.." ng-model = "formData.price">
+                        <select style="width: 10%" name = "currency">
+
+                            <option value="EUR">
+                                EUR
+                            </option>
+                            <option value="GBP">
+                                GBP
+                            </option>
+
+                        </select><br>
+                    </div>
+
+
+                    <!--Craft Description-->
+                    <!--This has to be alot bigger than a normal form input just take note-->
+                    <div class ="formOption">
+                        <label for="craftDesc">Craft Description</label><br>
+                        <input type="text" id="craftDesk" name="craftDesc" placeholder="Craft Desc.." ng-model = "formData.description"><br>
+                    </div>
+
+
+
+                    <!--Craft Tags-->
+                    <div class = "formOption">
+
+                        <label for = "craftTags">Craft Tags</label><br>
+                        <input type = "text" id="craftTags" name="craftTags" placeholder="Cards..WoodCraft...etc.." ng-model ="formData.tags"><br>
+                        <p style="font-size: 10px; color: #282d35">Example - Cards, Birthday, Papercraft etc. - makes searching easier</p><br>
+
+                    </div>
+
+                    <!--Featured Functionality-->
+                    <div class = "formOption">
+
+                        <label for="featuredPost">Feature this craft?</label><br>
+                        <input type ="radio" name="featuredPostsTrue" ng-model="formData.featured" value="true" checked>Yes Please!<br>
+                        <input type ="radio" name="featuredPostsFalse" ng-model="formData.featured" value="false" checked>Not Now.<br>
+
+
+                    </div>
+
+
+                    <!--Submit Craft-->
+                    <div class = "formOption" align="center">
+                        <input  type="submit" ng-click="updatePost()" value="Update"><br>
+                    </div>
+
+
+                    <div class = "formOption">
+
+                        <p style="text-align: center">By clicking submit you are excepting<b style="color: red">
+                                Featured Dreams</b><a href=""><b style="color: #00B7FF">
+                                    Terms of Service</b> </a> agreement </p>
+
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 

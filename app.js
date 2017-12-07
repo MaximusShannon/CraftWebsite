@@ -31,6 +31,7 @@ app.use('/Posts', posts);
 //User endpoints
 app.get("/users", user.findAll);
 app.get("/users/:id", user.findOne);
+app.post('/login', user.authenticateUser);
 app.post("/adduser", user.addUser);
 app.put("/TemporaryUsers/:id/bio", user.updateProfileBio);
 app.delete("/deleteuser/:id", user.deleteUser);
@@ -44,6 +45,7 @@ app.get("/postsbytags/:tags", posts.findAllPostsByTag);
 app.get("/postsbylowerprice/:price", posts.findAllLessThanPrice);
 app.get('/postsbycategory/:category', posts.findAllCraftsByCertainCategory);
 app.post('/addcraft', posts.addCraft);
+app.put('/updatepost/:id', posts.updatePost);
 app.delete('/deletepost/:id', posts.deletePost);
 
 
