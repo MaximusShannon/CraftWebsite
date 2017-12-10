@@ -77,32 +77,32 @@ app.config(function ($routeProvider) {
         })
 
         .when('/woodcraftsection', {
-            templateUrl: 'pages/woodcraftsection.ejs',
+            templateUrl: 'pages/sections/woodcraftsection.ejs',
             controller: 'woodCraftSectionController'
         })
 
         .when('/metalcraftsection', {
-            templateUrl: 'pages/metalcraftsection.ejs',
+            templateUrl: 'pages/sections/metalcraftsection.ejs',
             controller: 'metalCraftSectionController'
         })
 
         .when('/woodcraftsection', {
-            templateUrl: 'pages/woodcraftsection.ejs',
+            templateUrl: 'pages/sections/woodcraftsection.ejs',
             controller: 'woodCraftSectionController'
         })
 
         .when('/papercraftsection', {
-            templateUrl: 'pages/papercraftsection.ejs',
+            templateUrl: 'pages/sections/papercraftsection.ejs',
             controller: 'paperCraftSectionController'
         })
 
         .when('/fabriccraftsection', {
-            templateUrl: 'pages/fabriccraftsection.ejs',
+            templateUrl: 'pages/sections/fabriccraftsection.ejs',
             controller: 'fabricCraftSectionController'
         })
 
         .when('/othercraftsection', {
-            templateUrl: 'pages/othercraftsection.ejs',
+            templateUrl: 'pages/sections/othercraftsection.ejs',
             controller: 'otherCraftSectionController'
         })
 
