@@ -86,11 +86,6 @@ app.config(function ($routeProvider) {
             controller: 'metalCraftSectionController'
         })
 
-        .when('/woodcraftsection', {
-            templateUrl: 'pages/sections/woodcraftsection.ejs',
-            controller: 'woodCraftSectionController'
-        })
-
         .when('/papercraftsection', {
             templateUrl: 'pages/sections/papercraftsection.ejs',
             controller: 'paperCraftSectionController'
@@ -104,7 +99,7 @@ app.config(function ($routeProvider) {
         .when('/othercraftsection', {
             templateUrl: 'pages/sections/othercraftsection.ejs',
             controller: 'otherCraftSectionController'
-        })
+        });
 
 
 
