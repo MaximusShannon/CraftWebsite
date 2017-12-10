@@ -79,4 +79,12 @@ app.use(function(err, req, res, next) {
     res.render("error");
 });
 
+//google login
+function onLoadFunction() {
+    gapi.client.setApiKey('AIzaSyBaa7ff28gjjIZeEuofM02g3XqT3PUAO20');
+    gapi.client.load('plus', 'v1', function () {
+
+    });
+}
+
 module.exports = app;
