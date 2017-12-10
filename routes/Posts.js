@@ -62,19 +62,19 @@ function findAllPostsLowerThanPriceGiven(allPosts, searchPrice){
 function selectRandomizedFeaturedPosts(allPosts){
 
     var randomFeatured = [];
+    var alreadyPushed = [];
     var counter = 0;
 
-    for(var i = 0; counter <= 3; i++){
+    for(var i = 0; counter < 3; i++){
         var rand = allPosts[Math.floor(Math.random() * allPosts.length)];
-        if(rand.featured){
+        if(rand.featured && alreadyPushed.indexOf(rand._id) === -1 ){
             randomFeatured.push(rand);
+            alreadyPushed.push(rand._id);
             counter++
         }
-
         if(i > 100)
             break;
     }
-
     return randomFeatured;
 }
 

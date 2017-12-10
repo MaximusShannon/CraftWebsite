@@ -4,6 +4,8 @@ app.controller('browseCraftsController', ['$scope', '$http', function($scope, $h
 
     $scope.message = 'browse section';
     findAllPosts();
+    getFeaturedPosts();
+    $scope.featured = {};
 
 
     function findAllPosts() {
@@ -16,6 +18,21 @@ app.controller('browseCraftsController', ['$scope', '$http', function($scope, $h
             .error(function (data) {
                 console.log("least it did something" + data);
             });
+
+    }
+
+    function getFeaturedPosts(){
+
+        $http.get('/randomizedfeaturedposts')
+            .success(function (featuredData) {
+               $scope.featured = featuredData;
+               console.log($scope.featured);
+            })
+
+            .error(function (data) {
+                console.log("least it did something" + data);
+            });
+
 
     }
 }]);

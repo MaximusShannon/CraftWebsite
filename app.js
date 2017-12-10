@@ -46,10 +46,13 @@ app.get("/posts/:id", posts.findOne);
 app.get("/postsbytags/:tags", posts.findAllPostsByTag);
 app.get("/postsbylowerprice/:price", posts.findAllLessThanPrice);
 app.get('/postsbycategory/:category', posts.findAllCraftsByCertainCategory);
+app.get('/randomizedfeaturedposts', posts.findRandomizedFeaturedPosts);
 app.post('/addcraft', posts.addCraft);
-app.post('/uploadimage', posts.uploadImage);
 app.put('/updatepost/:id', posts.updatePost);
 app.delete('/deletepost/:id', posts.deletePost);
+//not working
+app.post('/uploadimage', posts.uploadImage);
+
 
 
 
