@@ -2,8 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Post = require('../Models/PostSchema');
-var multer = require('multer');
-var upload = multer({dest: _dirname+'/../../public/uploads'});
+
 
 
 

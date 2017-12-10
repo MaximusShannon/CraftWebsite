@@ -15,7 +15,7 @@ app.controller('updatePageController', ['$scope', '$http', '$location', 'craftSe
         $http.put('/updatepost/' + craftService.id, $scope.formData)
             .success(function (data) {
                 console.log(data);
-                $location.path('/homecraftsection')
+                $location.path('/browsecrafts')
             })
 
             .error(function (data) {

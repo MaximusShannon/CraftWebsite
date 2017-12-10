@@ -36,6 +36,8 @@ app.service('userService', function () {
 app.config(function ($routeProvider) {
     $routeProvider
 
+
+
         .when('/home',{
            templateUrl: 'pages/home.ejs',
            controller : 'homePageController'
@@ -66,11 +68,46 @@ app.config(function ($routeProvider) {
             controller: 'updatePageController'
         })
 
+
+
         //sections
         .when('/homecraftsection', {
-            templateUrl: 'pages/homecraftsection.ejs',
+            templateUrl: 'pages/sections/homecraftsection.ejs',
             controller: 'homeCraftSectionController'
-        });
+        })
+
+        .when('/woodcraftsection', {
+            templateUrl: 'pages/woodcraftsection.ejs',
+            controller: 'woodCraftSectionController'
+        })
+
+        .when('/metalcraftsection', {
+            templateUrl: 'pages/metalcraftsection.ejs',
+            controller: 'metalCraftSectionController'
+        })
+
+        .when('/woodcraftsection', {
+            templateUrl: 'pages/woodcraftsection.ejs',
+            controller: 'woodCraftSectionController'
+        })
+
+        .when('/papercraftsection', {
+            templateUrl: 'pages/papercraftsection.ejs',
+            controller: 'paperCraftSectionController'
+        })
+
+        .when('/fabriccraftsection', {
+            templateUrl: 'pages/fabriccraftsection.ejs',
+            controller: 'fabricCraftSectionController'
+        })
+
+        .when('/othercraftsection', {
+            templateUrl: 'pages/othercraftsection.ejs',
+            controller: 'otherCraftSectionController'
+        })
+
+
+
 
 
 
