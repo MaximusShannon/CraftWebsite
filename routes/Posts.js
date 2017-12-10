@@ -1,8 +1,11 @@
-
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Post = require('../Models/PostSchema');
+var multer = require('multer');
+var upload = multer({dest: _dirname+'/../../public/uploads'});
+
+
 
 
 
@@ -19,6 +22,7 @@ db.on('error', function (err) {
 db.once('open', function () {
    console.log('Connection Successful');
 });
+
 
 
 
@@ -91,6 +95,16 @@ function findAllPostsByCategory(allPosts, category){
 
 
 //********************** Router Functions **********************
+
+router.uploadImage = function (req, res) {
+
+    var widgetId = req.body.widgetId;
+    var width = req.body.width;
+    var file = req.file;
+
+    var userId = req.body.userId;
+
+};
 
 router.findAllPosts = function (req, res) {
 

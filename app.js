@@ -3,6 +3,10 @@ var path = require("path");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
+var file = require('file-system');
+var fs = require('fs');
+
+
 
 var routes = require('./routes/index');
 var user = require("./routes/User");
@@ -45,6 +49,7 @@ app.get("/postsbytags/:tags", posts.findAllPostsByTag);
 app.get("/postsbylowerprice/:price", posts.findAllLessThanPrice);
 app.get('/postsbycategory/:category', posts.findAllCraftsByCertainCategory);
 app.post('/addcraft', posts.addCraft);
+app.post('/uploadimage', posts.uploadImage);
 app.put('/updatepost/:id', posts.updatePost);
 app.delete('/deletepost/:id', posts.deletePost);
 

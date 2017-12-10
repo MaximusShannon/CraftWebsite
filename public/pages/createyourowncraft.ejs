@@ -61,7 +61,12 @@
 
 
             <img src="/images/Upload.svg" alt ="FirstImage" width="300" height="300">
-            <button style="width: 300px; height: 25px" class="button">Upload Images</button>
+            <!--<input type="file" style="width: 300px; height: 25px" name="multiplefileupload" multiple >Upload Images-->
+            <form action = "routes/uploadImage">
+                <input type="file" name ="multiplefileupload" multiple/>
+
+            </form>
+
 
         </div>
 
