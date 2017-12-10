@@ -26,7 +26,8 @@ app.service('userService', function () {
         email: "",
         password: "",
         bio: "",
-        profilePictureRef: ""
+        profilePictureRef: "",
+        isLoggedIn: false
     };
 
     return userService;

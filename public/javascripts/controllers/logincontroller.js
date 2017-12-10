@@ -14,6 +14,7 @@ app.controller('loginController', ['$scope', '$http', '$location', 'userService'
                userService.password = user.password;
                userService.bio = user.bio;
                userService.profilePictureRef = user.profilePictureRef;
+               userService.isLoggedIn = true;
                $location.path('/home')
             }).error(function (data) {
                 console.log('Error: ' + data);

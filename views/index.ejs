@@ -88,31 +88,56 @@
 
 <body>
 
-<div ng-controller = "mainController">
+<div ng-controller = "homePageController">
 
 
 
-
-
-<ul>
-  <li>
-    <a href="#home"><i class="fa fa-leaf" aria-hidden="true"></i> Fertile dreams</a>
-  </li>
+<div ng-show="!formData.isLoggedIn">
+  <ul>
+    <li>
+      <a href="#home"><i class="fa fa-leaf" aria-hidden="true"></i> Fertile dreams</a>
+    </li>
 
     <li>
       <a href="#browsecrafts"> Browse Crafts </a>
     </li>
 
-  <li>
-    <a href="#createyourowncraft">Create Your Own Crafts</a>
-  </li>
-  <li>
-    <a href="#createyourowncraft">Build your own shop</a>
-  </li>
-  <li class ="rightNav"><a href="#login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
-  <li class ="rightNav"><a href="#registeruser"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</a></li>
-</ul>
+    <li>
+      <a href="#createyourowncraft">Create Your Own Crafts</a>
+    </li>
+    <li>
 
+    </li>
+    <li class ="rightNav"><a href="#login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+    <li class ="rightNav"><a href="#registeruser"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</a></li>
+  </ul>
+</div>
+
+  <!--change the formData-->
+  <div ng-show= "formData.isLoggedIn">
+    <ul>
+      <li>
+        <a href="#home"><i class="fa fa-leaf" aria-hidden="true"></i> Fertile dreams</a>
+      </li>
+
+      <li>
+        <a href="#browsecrafts"> Browse Crafts </a>
+      </li>
+
+      <li>
+        <a href="#createyourowncraft">Create Your Own Crafts</a>
+      </li>
+      <li>
+        <a href="#createyourowncraft">Build your own shop</a>
+      </li>
+      <!--<li class ="rightNav"><a href="#login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>-->
+      <!--<li class ="rightNav"><a href="#registeruser"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</a></li>-->
+
+      <li class="rightNav" ng-model = "user"><a href="#profile">{{formData.userName}} <img class="rightNav" style="padding-left: 10px" src="" width="25px" height="25px"> </a></li>
+
+    </ul>
+
+  </div>
 
 <div id = "main">
 
