@@ -18,23 +18,25 @@ describe('Posts', function () {
        };
        posts.push({
            title: "Edels Cards",
-           category: "Cards",
+           category: "Home Crafts",
            imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
            infoTitle: "Cards for all occasions",
            price: 7.99,
            tags: "Cards, Birthday, Birthdays, Christmas, deaths, births, wedding",
            date: Date.now(),
+           featured: false,
            postId: 1000
        });
 
        posts.push({
-           title: "Trinas Cards",
-           category: "Cards",
+           title: "Metal Wonders",
+           category: "Metal Crafts",
            imageReferences: [{img1: "xxx",img2: "xxx",img3: "xxx"}],
            infoTitle: "Cards for special Occasions",
            price: 15.99,
            tags: "Christmas, Birthdays, wedding",
            date: Date.now(),
+           featured: true,
            postId: 1001
        });
    });
