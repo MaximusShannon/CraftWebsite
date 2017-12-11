@@ -39,37 +39,37 @@ app.config(function ($routeProvider) {
 
 
         .when('/home',{
-           templateUrl: 'pages/home.ejs',
+           templateUrl: 'public/pages/home.ejs',
            controller : 'homePageController'
         })
 
         .when('/createyourowncraft', {
-            templateUrl: 'pages/createyourowncraft.ejs',
+            templateUrl: 'public/pages/createyourowncraft.ejs',
             controller: 'createCraftController'
          })
 
         .when('/browsecrafts', {
-            templateUrl: 'pages/browsecrafts.ejs',
+            templateUrl: 'public/pages/browsecrafts.ejs',
             controller: 'browseCraftsController'
         })
 
         .when('/login', {
-            templateUrl: 'pages/login.ejs',
+            templateUrl: 'public/pages/login.ejs',
             controller: 'loginController'
         })
 
         .when('/registeruser', {
-            templateUrl: 'pages/registeruser.ejs',
+            templateUrl: 'public/pages/registeruser.ejs',
             controller: 'registerUserController'
         })
 
         .when('/update', {
-            templateUrl: 'pages/update.ejs',
+            templateUrl: 'public/pages/update.ejs',
             controller: 'updatePageController'
         })
 
         .when('/profile', {
-            templateUrl:'pages/profile.ejs',
+            templateUrl:'public/pages/profile.ejs',
             controller: 'profileController'
         })
 
@@ -77,32 +77,32 @@ app.config(function ($routeProvider) {
 
         //sections
         .when('/homecraftsection', {
-            templateUrl: 'pages/sections/homecraftsection.ejs',
+            templateUrl: 'public/pages/sections/homecraftsection.ejs',
             controller: 'homeCraftSectionController'
         })
 
         .when('/woodcraftsection', {
-            templateUrl: 'pages/sections/woodcraftsection.ejs',
+            templateUrl: 'public/pages/sections/woodcraftsection.ejs',
             controller: 'woodCraftSectionController'
         })
 
         .when('/metalcraftsection', {
-            templateUrl: 'pages/sections/metalcraftsection.ejs',
+            templateUrl: 'public/pages/sections/metalcraftsection.ejs',
             controller: 'metalCraftSectionController'
         })
 
         .when('/papercraftsection', {
-            templateUrl: 'pages/sections/papercraftsection.ejs',
+            templateUrl: 'public/pages/sections/papercraftsection.ejs',
             controller: 'paperCraftSectionController'
         })
 
         .when('/fabriccraftsection', {
-            templateUrl: 'pages/sections/fabriccraftsection.ejs',
+            templateUrl: 'public/pages/sections/fabriccraftsection.ejs',
             controller: 'fabricCraftSectionController'
         })
 
         .when('/othercraftsection', {
-            templateUrl: 'pages/sections/othercraftsection.ejs',
+            templateUrl: 'public/pages/sections/othercraftsection.ejs',
             controller: 'otherCraftSectionController'
         });
 
