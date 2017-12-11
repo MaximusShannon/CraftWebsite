@@ -22,11 +22,6 @@ db.once('open', function () {
    console.log('Connection Successful');
 });
 
-
-
-
-
-
 //********************** Support Functions ********************** //
 
 function findAllPostsByTagGiven(allPosts, searchTag){

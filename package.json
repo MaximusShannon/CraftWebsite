@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "set NODE_ENV=test && mocha Tests/routes/UserApiTests.js && mocha Tests/routes/PostApiTests.js"
+    "test": " set NODE_ENV=test mocha Tests/routes/PostApiTests.js"
   },
   "dependencies": {
     "bcrypt": "1.0.3",
