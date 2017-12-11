@@ -92,7 +92,7 @@
                     <!--Craft Category-->
                     <div class = "formOption">
                         <label for ="craftCategory">Craft Category</label><br>
-                        <select ng-model="formData.category">
+                        <select required="true" ng-model="formData.category">
                             <option>Home Crafts</option>
                             <option>Wood Crafts</option>
                             <option>Metal Crafts</option>
@@ -105,7 +105,7 @@
                     <!-- Craft Title-->
                     <div class ="formOption">
                         <label for ="craftTitle">Craft Title</label><br>
-                        <input type="text" id="craftTitle" name="craftTitle" placeholder="Desriptive name of your craft" ng-model="formData.title"><br>
+                        <input type="text" id="craftTitle" name="craftTitle" placeholder="Desriptive name of your craft" ng-model="formData.title" required="true"><br>
                     </div>
 
 
@@ -113,7 +113,7 @@
                     <!--Craft Sub title-->
                     <div class = "formOption">
                         <label for ="craftSubTitle">Craft Info Title</label><br>
-                        <input type="text" id="craftSubTitle" name="craftSubTitle" placeholder="A subtitle for your craft" ng-model="formData.infoTitle"?><br>
+                        <input type="text" id="craftSubTitle" name="craftSubTitle" placeholder="A subtitle for your craft" ng-model="formData.infoTitle" required="true"><br>
                     </div>
 
 
@@ -122,7 +122,7 @@
                     <!--Craft Price-->
                     <div class = "formOption">
                         <label for = "craftPrice">Craft price</label><br>
-                        <input style="width: 25%" type ="text" id="craftPrice" name="craftPrice" placeholder="Price.." ng-model = "formData.price">
+                        <input style="width: 25%" type ="text" id="craftPrice" name="craftPrice" placeholder="Price.." ng-model = "formData.price" required="true">
                         <select style="width: 10%" name = "currency">
 
                             <option value="EUR">
@@ -140,7 +140,7 @@
                     <!--This has to be alot bigger than a normal form input just take note-->
                     <div class ="formOption">
                         <label for="craftDesc">Craft Description</label><br>
-                        <input type="text" id="craftDesk" name="craftDesc" placeholder="Craft Desc.." ng-model = "formData.description"><br>
+                        <input type="text" id="craftDesk" name="craftDesc" placeholder="Craft Desc.." ng-model = "formData.description" required="true"><br>
                     </div>
 
 
@@ -149,7 +149,7 @@
                     <div class = "formOption">
 
                         <label for = "craftTags">Craft Tags</label><br>
-                        <input type = "text" id="craftTags" name="craftTags" placeholder="Cards..WoodCraft...etc.." ng-model ="formData.tags"><br>
+                        <input type = "text" id="craftTags" name="craftTags" placeholder="Cards..WoodCraft...etc.." ng-model ="formData.tags" required="true"><br>
                         <p style="font-size: 10px; color: #282d35">Example - Cards, Birthday, Papercraft etc. - makes searching easier</p><br>
 
                     </div>

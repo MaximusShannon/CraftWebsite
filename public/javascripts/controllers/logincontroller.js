@@ -11,19 +11,27 @@ app.controller('loginController', ['$scope', '$http', '$location', 'userService'
     
     $scope.authenticateUser = function () {
 
-        $http.post('/login',  $scope.formData)
-            .success(function (user) {
-               userService.userName = user.userName;
-               userService.email = user.email;
-               userService.password = user.password;
-               userService.bio = user.bio;
-               userService.profilePictureRef = user.profilePictureRef;
-               userService.isLoggedIn = true;
-               $location.path('/home')
-            }).error(function (data) {
+        if ($scope.formData.email !== '' && $scope.formData.password !== '') {
+
+            $http.post('/login', $scope.formData)
+                .success(function (user) {
+                    userService.userName = user.userName;
+                    userService.email = user.email;
+                    userService.password = user.password;
+                    userService.bio = user.bio;
+                    userService.profilePictureRef = user.profilePictureRef;
+                    userService.isLoggedIn = true;
+                    $location.path('/home')
+                }).error(function (data) {
                 console.log('Error: ' + data);
-        });
+            });
+
+        } else {
+            console.log('Error Occured');
+        }
     };
+
+
 
     $scope.onGoogleLogin = function (googleUser) {
         // var params = {

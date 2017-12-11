@@ -127,10 +127,10 @@
 
 
                 <label for = "email">Email Address</label><br>
-                <input type="text" id="email" name="emailentry" ng-model="formData.email"><br>
+                <input type="text" id="email" name="emailentry" ng-model="formData.email" required="true"><br>
 
                 <label style="text-align: left" for = "password1">Password</label><br>
-                <input type="password" id="password1" ng-model="formData.password"><br>
+                <input type="password" id="password1" ng-model="formData.password" required="true"><br>
 
 
                 <input type="submit" ng-click="authenticateUser()" value="Submit"><br>

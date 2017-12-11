@@ -1,0 +1,46 @@
+
+<style>
+    #btnsUpdate{
+        margin-right: 10px;
+        background-color: green;
+        border: none;
+        width: 15%;
+        height: 12%;
+        text-align: center;
+        color: white;
+    }
+</style>
+
+<div ng-controller = "profileController as list">
+
+    <div class="container">
+
+        <div class="row">
+            <h2>Welcome, {{displayData.userName}} this is your profile.</h2>
+            <hr style="border: 1px solid red">
+        </div>
+
+        <div style="height: 25%" class="row">
+
+            <div align="center" class="col-md-4">
+
+                <h4 style="" align="left">Profile Name:                                 {{displayData.userName}}</h4>
+                <h4 style="padding-top: 5%" align="left">Email:                         {{displayData.email}} </h4>
+                <h4 style="padding-top: 5%" align="left">Bio:                           {{displayData.bio}} </h4>
+
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+
+        </div>
+
+        <div class="row">
+
+            <button id="btnsUpdate" ng-click="updatePost(post)" class="inline">Update</button>
+
+        </div>
+
+    </div>
+
+</div>
+

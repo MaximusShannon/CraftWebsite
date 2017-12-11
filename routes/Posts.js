@@ -91,6 +91,18 @@ function findAllPostsByCategory(allPosts, category){
     return postsMatched;
 }
 
+function selectAllPostsFromParticularUser(posts, idSent){
+
+    var usersPosts = [];
+
+    for(var i = 0; i < posts.length; i++){
+        if(posts[i].id === idSent ){
+            usersPosts.push(posts[i]);
+        }
+    }
+    return usersPosts;
+}
+
 
 
 //********************** Router Functions **********************
@@ -128,8 +140,6 @@ router.findOne = function (req, res) {
 
 };
 
-
-
 // Post filtering endpoints
 
 router.findAllPostsByTag = function (req, res) {
@@ -145,6 +155,18 @@ router.findAllPostsByTag = function (req, res) {
 
     });
 
+};
+
+router.userPosts = function (req, res) {
+
+    Post.find(function (err, posts) {
+
+        if(err){
+            res.json(err);
+        }
+
+        res.json(selectAllPostsFromParticularUser(posts, req.params.id));
+    });
 };
 
 router.findAllLessThanPrice = function (req, res) {

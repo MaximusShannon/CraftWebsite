@@ -1,9 +1,10 @@
 var app = angular.module('CraftWebApplication');
 
-app.controller('createCraftController', ['$scope', '$location', '$http', function ($scope,$location,$http) {
+app.controller('createCraftController', ['$scope', '$location', '$http', 'userService', function ($scope,$location,$http, userService) {
 
     $scope.message = 'Create Craft page';
     $scope.formData = {};
+    $scope.formData.userId = userService.id;
 
     $scope.addCraft = function () {
 

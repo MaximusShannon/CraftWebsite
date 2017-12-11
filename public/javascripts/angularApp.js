@@ -68,6 +68,11 @@ app.config(function ($routeProvider) {
             controller: 'updatePageController'
         })
 
+        .when('/profile', {
+            templateUrl:'pages/profile.ejs',
+            controller: 'profileController'
+        })
+
 
 
         //sections

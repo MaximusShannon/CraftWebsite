@@ -141,16 +141,16 @@
 
 
                 <label for = "email">Email Address</label><br>
-                <input type="text" id="email" name="emailentry" ng-model="formData.email"><br>
+                <input type="text" id="email" name="emailentry" ng-model="formData.email" required="true"><br>
 
                 <label for = "username">Username</label><br>
-                <input type="text" id="username" name="userNameEntry" ng-model="formData.userName" placeholder=""><br>
+                <input type="text" id="username" name="userNameEntry" ng-model="formData.userName" required="true" placeholder=""><br>
 
                 <label style="text-align: left" for = "password1">Password</label><br>
-                <input type="password" id="password1" ng-model="formData.password" name="emailentry" placeholder=""><br>
+                <input type="password" id="password1" ng-model="formData.password" name="emailentry" required="true" placeholder=""><br>
 
                 <label for = "password2">Confrim Password</label><br>
-                <input type="password" id="password2" name="emailentry" placeholder="">
+                <input type="password" id="password2" name="emailentry" required="true" placeholder="">
                 <br>
 
                 <input type="submit" ng-click="addUser()" value="Submit"><br>

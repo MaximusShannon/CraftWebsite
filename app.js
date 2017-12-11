@@ -43,6 +43,7 @@ app.delete("/deleteuser/:id", user.deleteUser);
 //Posts
 app.get("/posts", posts.findAllPosts);
 app.get("/posts/:id", posts.findOne);
+app.get('/usersposts/:id', posts.userPosts);
 app.get("/postsbytags/:tags", posts.findAllPostsByTag);
 app.get("/postsbylowerprice/:price", posts.findAllLessThanPrice);
 app.get('/postsbycategory/:category', posts.findAllCraftsByCertainCategory);
