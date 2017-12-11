@@ -1,6 +1,4 @@
-var app = angular.module('CraftWebApplication');
-
-app.controller('browseCraftsController', ['$scope', '$http', function($scope, $http){
+function browseCraftsController($scope, $http) {
 
     $scope.message = 'browse section';
     findAllPosts();
@@ -21,12 +19,12 @@ app.controller('browseCraftsController', ['$scope', '$http', function($scope, $h
 
     }
 
-    function getFeaturedPosts(){
+    function getFeaturedPosts() {
 
         $http.get('/randomizedfeaturedposts')
             .success(function (featuredData) {
-               $scope.featured = featuredData;
-               console.log($scope.featured);
+                $scope.featured = featuredData;
+                console.log($scope.featured);
             })
 
             .error(function (data) {
@@ -35,4 +33,6 @@ app.controller('browseCraftsController', ['$scope', '$http', function($scope, $h
 
 
     }
-}]);
+}
+
+module.exports = browseCraftsController;

@@ -1,6 +1,4 @@
-var app = angular.module('CraftWebApplication');
-
-app.controller('profileController', ['$scope', '$http', '$location','craftService', 'userService', function ($scope, $http, $location, craftService, userService) {
+function profileController ($scope, $http, $location, craftService, userService) {
 
     $scope.message = 'login Controller';
     $scope.displayData = userService;
@@ -8,7 +6,7 @@ app.controller('profileController', ['$scope', '$http', '$location','craftServic
     $scope.getUsersPosts = function () {
 
         $http.get('/usersposts/' + $scope.displayData._id)
-            .success(function (data){
+            .success(function (data) {
                 $scope.userposts = data;
             })
             .error(function () {
@@ -19,7 +17,7 @@ app.controller('profileController', ['$scope', '$http', '$location','craftServic
 
     $scope.delete = function (id) {
 
-        if(confirm("Are you sure you want to delete this Post?")){
+        if (confirm("Are you sure you want to delete this Post?")) {
 
             $http.delete('/deletepost/' + id)
                 .success(function (data) {
@@ -43,4 +41,6 @@ app.controller('profileController', ['$scope', '$http', '$location','craftServic
         $location.path('/update');
     }
 
-}]);
+}
+
+module.exports = profileController;

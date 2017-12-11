@@ -1,4 +1,7 @@
+require('angular');
+require('angular-route');
 var app = angular.module('CraftWebApplication', ['ngRoute']);
+require('./controllers/index');
 
 app.service('craftService', function () {
 
@@ -105,10 +108,5 @@ app.config(function ($routeProvider) {
             templateUrl: 'public/pages/sections/othercraftsection.ejs',
             controller: 'otherCraftSectionController'
         });
-
-
-
-
-
 
 });

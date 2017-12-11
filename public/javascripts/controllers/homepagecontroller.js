@@ -1,13 +1,7 @@
-var app = angular.module('CraftWebApplication');
-
-app.controller('homePageController', ['$scope', 'userService', function ($scope, userService) {
+function homePageController($scope, userService) {
 
     $scope.message = 'name: ' + userService.userName + userService.isLoggedIn;
     $scope.formData = userService;
+}
 
-
-    console.log("here");
-
-
-
-}]);
+module.exports = homePageController;

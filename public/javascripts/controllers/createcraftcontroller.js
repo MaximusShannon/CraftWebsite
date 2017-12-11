@@ -1,6 +1,4 @@
-var app = angular.module('CraftWebApplication');
-
-app.controller('createCraftController', ['$scope', '$location', '$http', 'userService', function ($scope,$location,$http, userService) {
+function createCraftController($scope,$location,$http, userService) {
 
     $scope.message = 'Create Craft page';
     $scope.formData = {};
@@ -20,4 +18,6 @@ app.controller('createCraftController', ['$scope', '$location', '$http', 'userSe
     }
 
 
-}]);
+}
+
+module.exports = createCraftController;

@@ -1,20 +1,15 @@
-var app = angular.module('CraftWebApplication');
-
-app.controller('metalCraftSectionController', ['$scope', '$http', '$location', 'craftService', function ($scope, $http, $location, craftService) {
+function metalCraftSectionController ($scope, $http, $location, craftService) {
 
     $scope.message = 'Metal Crafts';
-    //$scope.listSize = $scope.posts.keys($scope.post).length;
     $scope.formData = {};
-
     findAllCraftsByCertainCategory($scope.message);
 
-    function findAllCraftsByCertainCategory(category){
+    function findAllCraftsByCertainCategory(category) {
 
         $http.get('/postsbycategory/' + category)
             .success(function (data) {
                 $scope.posts = data;
                 $scope.length = $scope.posts.length;
-                console.log(data);
             })
 
             .error(function () {
@@ -24,8 +19,7 @@ app.controller('metalCraftSectionController', ['$scope', '$http', '$location', '
 
     $scope.delete = function (id) {
 
-        if(confirm("Are you sure you want to delete this Post?")){
-
+        if (confirm("Are you sure you want to delete this Post?")) {
             $http.delete('/deletepost/' + id)
                 .success(function (data) {
                     findAllCraftsByCertainCategory($scope.message);
@@ -35,7 +29,7 @@ app.controller('metalCraftSectionController', ['$scope', '$http', '$location', '
                     console.log('Error' + data)
                 });
         }
-    }
+    };
 
     $scope.updatePost = function (postFromPage) {
 
@@ -49,9 +43,7 @@ app.controller('metalCraftSectionController', ['$scope', '$http', '$location', '
         craftService.featured = postFromPage.featured;
         craftService.category = postFromPage.category;
         craftService.id = postFromPage._id;
-
-        console.log("craftService.title: " + craftService.title);
         $location.path('/update');
     }
-
-}]);
+}
+module.exports = metalCraftSectionController;

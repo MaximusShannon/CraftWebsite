@@ -1,6 +1,4 @@
-var app = angular.module('CraftWebApplication');
-
-app.controller('loginController', ['$scope', '$http', '$location', 'userService', function ($scope, $http, $location, userService) {
+function loginController ($scope, $http, $location, userService) {
 
     $scope.message = 'login Controller';
     $scope.gmail = {
@@ -8,7 +6,7 @@ app.controller('loginController', ['$scope', '$http', '$location', 'userService'
         email: ""
     };
     $scope.formData = {};
-    
+
     $scope.authenticateUser = function () {
 
         if ($scope.formData.email !== '' && $scope.formData.password !== '') {
@@ -30,7 +28,6 @@ app.controller('loginController', ['$scope', '$http', '$location', 'userService'
             console.log('Error Occured');
         }
     };
-
 
 
     $scope.onGoogleLogin = function (googleUser) {
@@ -69,7 +66,6 @@ app.controller('loginController', ['$scope', '$http', '$location', 'userService'
         gapi.auth2.init(params)
 
     }
+}
 
-
-
-}]);
+module.exports = loginController;
