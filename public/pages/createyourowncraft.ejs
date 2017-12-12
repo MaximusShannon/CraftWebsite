@@ -38,7 +38,7 @@
 
 </style>
 
-<div ng-controller="createCraftController">
+<div id="createyouowncraft" ng-controller="createCraftController">
 
     <div class = "container">
         <h3>Please add some of your craft images - Maximum 3</h3>
@@ -83,7 +83,7 @@
 
         <div class="row" style="background-color: #D3D3D3; padding: 10px">
 
-            <h3>Craft Information</h3>
+            <h3 id="formTitle">Craft Information</h3>
 
             <div class = "col-md-12">
 
@@ -91,8 +91,8 @@
 
                     <!--Craft Category-->
                     <div class = "formOption">
-                        <label for ="craftCategory">Craft Category</label><br>
-                        <select required="true" ng-model="formData.category">
+                        <label id="categoryLabel" for ="craftCategory">Craft Category</label><br>
+                        <select id="categorySelect" required="true" ng-model="formData.category">
                             <option>Home Crafts</option>
                             <option>Wood Crafts</option>
                             <option>Metal Crafts</option>
@@ -104,8 +104,8 @@
 
                     <!-- Craft Title-->
                     <div class ="formOption">
-                        <label for ="craftTitle">Craft Title</label><br>
-                        <input type="text" id="craftTitle" name="craftTitle" placeholder="Desriptive name of your craft" ng-model="formData.title" required="true"><br>
+                        <label id="craftTitleLabel" for ="craftTitle">Craft Title</label><br>
+                        <input type="text" id="craftTitle" name="craftTitle" placeholder="Descriptive name of your craft" ng-model="formData.title" required="true"><br>
                     </div>
 
 
@@ -121,7 +121,7 @@
 
                     <!--Craft Price-->
                     <div class = "formOption">
-                        <label for = "craftPrice">Craft price</label><br>
+                        <label id="craftPriceLabel" for = "craftPrice">Craft price</label><br>
                         <input style="width: 25%" type ="text" id="craftPrice" name="craftPrice" placeholder="Price.." ng-model = "formData.price" required="true">
                         <select style="width: 10%" name = "currency">
 
@@ -139,8 +139,8 @@
                     <!--Craft Description-->
                     <!--This has to be alot bigger than a normal form input just take note-->
                     <div class ="formOption">
-                        <label for="craftDesc">Craft Description</label><br>
-                        <input type="text" id="craftDesk" name="craftDesc" placeholder="Craft Desc.." ng-model = "formData.description" required="true"><br>
+                        <label id="craftDescLabel" for="craftDesc">Craft Description</label><br>
+                        <input type="text" id="craftDesc" name="craftDesc" placeholder="Craft Desc.." ng-model = "formData.description" required="true"><br>
                     </div>
 
 
@@ -148,7 +148,7 @@
                     <!--Craft Tags-->
                     <div class = "formOption">
 
-                        <label for = "craftTags">Craft Tags</label><br>
+                        <label id="craftTagsLabel" for = "craftTags">Craft Tags</label><br>
                         <input type = "text" id="craftTags" name="craftTags" placeholder="Cards..WoodCraft...etc.." ng-model ="formData.tags" required="true"><br>
                         <p style="font-size: 10px; color: #282d35">Example - Cards, Birthday, Papercraft etc. - makes searching easier</p><br>
 
@@ -157,7 +157,7 @@
                     <!--Featured Functionality-->
                     <div class = "formOption">
 
-                        <label for="featuredPost">Feature this craft?</label><br>
+                        <label id="featuredPostsLabel" for="featuredPost">Feature this craft?</label><br>
                         <input type ="radio" name="featuredPostsTrue" ng-model="formData.featured" value="true" checked>Yes Please!<br>
                         <input type ="radio" name="featuredPostsFalse" ng-model="formData.featured" value="false" checked>Not Now.<br>
 
@@ -167,7 +167,7 @@
 
                     <!--Submit Craft-->
                     <div class = "formOption" align="center">
-                        <input  type="submit" ng-click="addCraft();" value="Submit"><br>
+                        <input id="submit" type="submit" ng-click="addCraft();" value="submit"><br>
                     </div>
 
 
