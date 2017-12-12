@@ -1,3 +1,10 @@
 language: node_js
 node_js:
 - stable
+notifications:
+  email:
+    recipients:
+      - one@example.com      # uae your own
+      - other@example.com    # uae other (optional)
+    on_success: never        # default: change
+    on_failure: always       # default: always
