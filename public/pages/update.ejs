@@ -32,7 +32,7 @@
     /*}*/
 </style>
 
-<div ng-controller="updatePageController">
+<div id="update" ng-controller="updatePageController">
 
 
 
@@ -48,8 +48,8 @@
 
                     <!--Craft Category-->
                     <div class = "formOption">
-                        <label for ="craftCategory">Craft Category</label><br>
-                        <select ng-model="formData.category">
+                        <label id="craftCategoryLabel" for ="craftCategory">Craft Category</label><br>
+                        <select id="categorySelect" ng-model="formData.category">
                             <option>Home Crafts</option>
                             <option>Wood Crafts</option>
                             <option>Metal Crafts</option>
@@ -61,7 +61,7 @@
 
                     <!-- Craft Title-->
                     <div class ="formOption">
-                        <label for ="craftTitle">Craft Title</label><br>
+                        <label id="craftTitleLabel" for ="craftTitle">Craft Title</label><br>
                         <input type="text" id="craftTitle" name="craftTitle" value="hup" ng-model="formData.title"><br>
                     </div>
 
@@ -69,7 +69,7 @@
 
                     <!--Craft Sub title-->
                     <div class = "formOption">
-                        <label for ="craftSubTitle">Craft Info Title</label><br>
+                        <label id="craftSubtitleLabel" for ="craftSubTitle">Craft Info Title</label><br>
                         <input type="text" id="craftSubTitle" name="craftSubTitle" placeholder="A subtitle for your craft" ng-model="formData.infoTitle"?><br>
                     </div>
 
@@ -78,7 +78,7 @@
 
                     <!--Craft Price-->
                     <div class = "formOption">
-                        <label for = "craftPrice">Craft price</label><br>
+                        <label id="craftPriceLabel" for = "craftPrice">Craft price</label><br>
                         <input style="width: 25%" type ="text" id="craftPrice" name="craftPrice" placeholder="Price.." ng-model = "formData.price">
                         <select style="width: 10%" name = "currency">
 
@@ -96,8 +96,8 @@
                     <!--Craft Description-->
                     <!--This has to be alot bigger than a normal form input just take note-->
                     <div class ="formOption">
-                        <label for="craftDesc">Craft Description</label><br>
-                        <input type="text" id="craftDesk" name="craftDesc" placeholder="Craft Desc.." ng-model = "formData.description"><br>
+                        <label id="craftDescLabel" for="craftDesc">Craft Description</label><br>
+                        <input type="text" id="craftDesc" name="craftDesc" placeholder="Craft Desc.." ng-model = "formData.description"><br>
                     </div>
 
 
@@ -105,7 +105,7 @@
                     <!--Craft Tags-->
                     <div class = "formOption">
 
-                        <label for = "craftTags">Craft Tags</label><br>
+                        <label id="craftTagsLabel" for = "craftTags">Craft Tags</label><br>
                         <input type = "text" id="craftTags" name="craftTags" placeholder="Cards..WoodCraft...etc.." ng-model ="formData.tags"><br>
                         <p style="font-size: 10px; color: #282d35">Example - Cards, Birthday, Papercraft etc. - makes searching easier</p><br>
 
@@ -124,7 +124,7 @@
 
                     <!--Submit Craft-->
                     <div class = "formOption" align="center">
-                        <input  type="submit" ng-click="updatePost()" value="Update"><br>
+                        <input id="submit"  type="submit" ng-click="updatePost()" value="Update"><br>
                     </div>
 
 
