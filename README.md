@@ -6,7 +6,9 @@ Student No.:  20067975
 
 ## Overview.
 
-...... A brief explanation of what this repo demonstrates in relation to agile software process automation . . . . the nature of the app used  as the context for demonstrating the automation tools . . . .
+Demonstrates the use of webpack, acceptance testing using the selenium-webdriver v 3.4 (newer than suggested),
+code quality/linting with code coverage (still in the repo directory),
+demonstrates the use of source control and build automation using scripts.
 
 
 ## Environment.
@@ -14,6 +16,7 @@ Student No.:  20067975
 Node
 MongoDB
 npm install
+WebStorm
 
 ## Build automation.
 
