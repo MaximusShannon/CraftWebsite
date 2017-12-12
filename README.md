@@ -1,89 +1,91 @@
-# Assignment 1 - API testing and Source Control.
+# Assignment 2 - Automated development process.
 
 Name: Max Shannon
 
+Student No.:  20067975
+
 ## Overview.
 
-The API is built and will be further built on the idea of a webapp where the user creates a profile of themselves (or basically their craft shop) from their
-shop they will be able to create posts (users of this website will be interested in Arts and Crafts. Time and time again I see people using Facebook for this
-and their popularity doesn't grow so I intend to give the user the option and put it all in the one place.
-
-## API endpoints.
-
-Since I haven't implemented MongoDB into my project yet I used temporary Data
-
-I know that the endpoints shouldn't be capatilzed, i started this project and will change when I revamp and add the mongodb
-
- ++++ User Data Endpoints ++++
-
-/GETs
-/TemporaryUsers - finds all the temporary users
-/TemporaryUsers/:id - finds a user on a given users id - will fail if the correct Id is not given.
-
-/POST
-/TemporaryUsers - adds a user to the temporary collection - wont add if it doesn't send complete data and will respond with a failure message
-
-/PUT
-/TemporaryUsers/:id/bio - updates the users bio by a selectedId given, will send back a message if the user did not exist
-
-/DELETE
-/TemporaryUsers/:id - deletes a user by the id given, will send back a message if a user did not exist.
-
-++++ Post Data Endpoints ++++
-/GETs
-/TemporaryPosts - finds all the Temporary Posts
-
-/TemporaryPosts/:id - finds all the Temporary Posts - will fail if the correct id is not given
-
-/TemporaryPostsByTags/:tags - inside the post object there is a property of type tags, inside these tags the user is able to set their own tags for their profile and/or post they create
-this endpoint can search for a tag - (Example Cards) and will return any posts with the word Cards in their tags - it will also fail and return a message if no tags exist
-
-/TemporaryPostsByLowerPrice/:price - this will return any posts that have a lower price property than given - it will also fail if no posts meet the criteria and send a message back
+...... A brief explanation of what this repo demonstrates in relation to agile software process automation . . . . the nature of the app used  as the context for demonstrating the automation tools . . . .
 
 
-## Sample Test execution.
-C:\MeanStackDevelopment\CraftDesignDisplay>npm test
+## Environment.
 
-    > craftdesigndisplay@0.0.0 test C:\MeanStackDevelopment\CraftDesignDisplay
-    > set NODE_ENV=test && mocha Tests/routes/UserApiTests.js && mocha Tests/routes/PostApiTests.js
+Node
+MongoDB
+npm install
 
-      Users
-        GET /TemporaryUsers
-          √ should return all the users in the users array
-        GET /TemporaryUsers/:id
-          √ should return the user with 1000 as an id
-          √ should return a message if a invalid id is given
-        POST /TemporaryUsers
-          √ Should add a new user to the array of users
-          √ Should fail if all of userName, email or password is not given
-          √ should fail if one of the userName, email or password is not given
-        PUT /TemporaryUsers
-          √ Should update the users bio
-          √ Should fail when trying to update a users bio who isnt real
-        DELETE /TemporaryUser/:id
-          √ Should send a message of User Deleted after user has been removed
-          √ Should return the size of the array which should be smaller after an item is deleted
-          √ Should fail when trying to delete a user which does not exist
+## Build automation.
 
-      11 passing (53ms)
+I had issues with running the tests when building - this was due to the fact the server wouldn't be running by the time the tests ran.
+Please note, the tests for the section-test.js will fail unless i have data in the database - which I didn't have time to deploy the database to heroku.
 
-      Posts
-        GET /TemporaryPosts
-          √ Should get all the posts in the posts array
-        GET /TemporaryPosts/:postId
-          √ Should return the user with 1000 as an id
-          √ Should fail when an invalid id is given
-        GET /TemporaryPostsByTags/:tags
-          √ Should return the post with the tag Cards in the tags property
-          √ Should return a message if the criteria does not meet
-        GET /TemporaryPostsByLowerPrice/:price
-          √ Should return all the posts lower than the price given
-          √ Should return no posts because price given is lower than both posts
+npm run build:dev // doesn't run the tests properly
+npm install
+mocha Tests/acceptance
+
+## Acceptance Testing.
+
+[Browse Crafts Image](https://imgur.com/a/JawU8)
+Tests/acceptance/browse-crafts-test.js
+    √ shows the main header
+    √ shows the home craft polaroid (44ms)
+    √ shows the wood craft polaroid (46ms)
+    √ shows the home metal polaroid (44ms)
+    √ shows the paper craft polaroid (44ms)
+    √ shows the fabric craft polaroid (44ms)
+    √ shows the other craft polaroid (45ms)
+    √ shows the featured header
+
+[Create Crafts Image](https://imgur.com/a/XQ7wX)
+Tests/acceptance/createyourown-crafts-test.js
+    √ shows the main heading
+    √ shows the form heading
+    √ shows all the form labels (131ms)
+    √ displays the submit button
+    √ submit button should work (287ms)
+
+[Index Page](https://imgur.com/a/pinxm)
+Tests/acceptance/index-test.js
+    √ should display the navbar (105ms)
+
+[Login page](https://imgur.com/a/xMa7W)
+Tests/acceptance/login-test.js
+    √ should display the main heading
+    √ should display all the form labels (47ms)
+    √ should allow a user to submit credentials (122ms)
+    √ should display signin with google button
 
 
-  7 passing (38ms)
+This view is not finished
+[Profile page](https://imgur.com/a/sJgx9)
+    √ should display the three heading (61ms)
+    √ should display update button
 
+[Register User Page](https://imgur.com/a/88WJc)
+    √ should display the main heading
+    √ should display all the form labels (80ms)
+    √ should allow a user to submit credentials (190ms)
+    √ should display signin with google button
+    √ should display signin with facebook button
+
+[Section Page](https://imgur.com/a/qrDup)
+    √ should display the main heading
+    √ should display an Advert (39ms)
+
+[Update page](https://imgur.com/a/STF6g)
+    √ shows the main heading
+    √ shows all the form labels (139ms)
+    √ displays the submit button
+    √ submit button should work (264ms)
+
+## Continuous Integration.
+
+Not special steps required.
+[Travis Account](https://travis-ci.org/MaximusShannon/CraftWebsite)
+
+## Automated Deployment.
+No Automated deployment due to errors on heroku i did attempt, but when pushing to heroku master I received build errors
+[Error Image](https://imgur.com/a/fHc45)
 
 ## Extra features.
-
-Unfortunately I don't have any.
