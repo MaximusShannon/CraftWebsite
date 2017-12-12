@@ -33,6 +33,39 @@ test.describe('login Page', function () {
         });
     });
 
+    test.it('should display all the form labels', function () {
+        driver.findElement(By.id('emailLabel')).then(function (element) {
+            element.getText().then(function (text) {
+                expect(text).to.equal('Email Address')
+            });
+        });
+        driver.findElement(By.id('passwordLabel')).then(function (element) {
+            element.getText().then(function (text) {
+                expect(text).to.equal('Password')
+            });
+        });
+    });
+
+    test.it('should allow a user to submit credentials', function () {
+        driver.findElement(By.id('email')).then(function (element) {
+            element.sendKeys('maxshannon2016@hotmail.com');
+        });
+        driver.findElement(By.id('password')).then(function (element) {
+            element.sendKeys('bubbles123');
+        });
+        driver.findElement(By.id('submitLogin')).then(function (element) {
+            element.submit();
+        });
+    });
+
+    test.it('should display signin with google button', function () {
+        driver.findElement(By.tagName('button')).then(function (element) {
+            element.getText().then(function (text) {
+                expect(text).to.equal('Continue with Google')
+            });
+        });
+    });
+
     test.afterEach(function () {
         driver.manage().deleteAllCookies();
     });
