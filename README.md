@@ -31,6 +31,8 @@ mocha Tests/acceptance
 
 [Browse Crafts Image](https://imgur.com/a/JawU8)
 Tests/acceptance/browse-crafts-test.js
+
+'''
     √ shows the main header
     √ shows the home craft polaroid (44ms)
     √ shows the wood craft polaroid (46ms)
@@ -39,48 +41,63 @@ Tests/acceptance/browse-crafts-test.js
     √ shows the fabric craft polaroid (44ms)
     √ shows the other craft polaroid (45ms)
     √ shows the featured header
+    '''
 
 [Create Crafts Image](https://imgur.com/a/XQ7wX)
 Tests/acceptance/createyourown-crafts-test.js
+'''
     √ shows the main heading
     √ shows the form heading
     √ shows all the form labels (131ms)
     √ displays the submit button
     √ submit button should work (287ms)
+    '''
 
 [Index Page](https://imgur.com/a/pinxm)
 Tests/acceptance/index-test.js
+'''
     √ should display the navbar (105ms)
+    '''
 
 [Login page](https://imgur.com/a/xMa7W)
 Tests/acceptance/login-test.js
+'''
     √ should display the main heading
     √ should display all the form labels (47ms)
     √ should allow a user to submit credentials (122ms)
     √ should display signin with google button
+    '''
 
 
 This view is not finished
 [Profile page](https://imgur.com/a/sJgx9)
+'''
     √ should display the three heading (61ms)
     √ should display update button
+    '''
 
 [Register User Page](https://imgur.com/a/88WJc)
+'''
     √ should display the main heading
     √ should display all the form labels (80ms)
     √ should allow a user to submit credentials (190ms)
     √ should display signin with google button
     √ should display signin with facebook button
+    '''
 
 [Section Page](https://imgur.com/a/qrDup)
+'''
     √ should display the main heading
     √ should display an Advert (39ms)
+    '''
 
 [Update page](https://imgur.com/a/STF6g)
+'''
     √ shows the main heading
     √ shows all the form labels (139ms)
     √ displays the submit button
     √ submit button should work (264ms)
+    '''
 
 ## Continuous Integration.
 
