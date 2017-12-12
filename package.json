@@ -16,6 +16,7 @@
     "clean-dist": "rimraf ./dist && mkdir dist",
     "lint": "esw ./public/javascript/**/*.js ./test ./routes ./models/",
     "test": "cross-env NODE_ENV=test PORT=4000 && mocha Tests/acceptance",
+    "coverage": "cross-env NODE_ENV=test PORT=4000 && istanbul cover _mocha -- Tests/acceptance/section-test.js",
     "server": "nodemon bin/www"
   },
   "dependencies": {
