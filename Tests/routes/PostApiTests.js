@@ -1,5 +1,4 @@
-var posts = require('../../Models/TemporaryPosts');
-
+var Post = require('../../Models/PostSchema');
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../../bin/www');
@@ -7,53 +6,48 @@ var expect = chai.expect;
 var mongoose = require('mongoose');
 process.env.NODE_ENV = 'test';
 
-
 chai.use(chaiHttp);
 chai.use(require('chai-things'));
 
-mongoose.connect('mongodb://localhost:27017/craftdatabase');
-
-var db = mongoose.connection;
-
-db.on('error', function (err) {
-    console.log('connection error', err)
-});
-
-db.once('open', function () {
-    console.log('Connection Successful');
-});
 
 describe('Posts', function () {
    beforeEach(function () {
-        db.posts.drop();
 
-        var post = {
-            title: 'Test 1',
-            imageReferences: [],
-            infoTitle: 'Test 1 Infotitle',
-            price: 9.99,
-            description: 'Test 1s description',
-            date: Date.now(),
-            tags: 'metal, metal crafts',
-            featured: true,
-            category: 'Metal Crafts'
-        };
-       var post2 = {
-           title: 'Test 2',
-           imageReferences: [],
-           infoTitle: 'Test 2 Infotitle',
-           price: 5.99,
-           description: 'Test 2s description',
-           date: Date.now(),
-           tags: 'home, home crafts',
-           featured: false,
-           category: 'Home Crafts'
-       };
+        Post.remove({}, function (err) {
+            if(err)
+                done(err);
+        });
 
-        chai.request(server)
-            .post('/addcraft/', post);
-        chai.request(server)
-            .post('/addcraft/', post2);
+        var post = new Post();
+        post._id = '59f9fb109bd9dc7f544cadfa';
+        post.title = 'Test 1';
+        post.infoTitle=  'Test 1 Infotitle';
+        post.price = 9.99;
+        post.description = 'Test 1s description';
+        post.date = Date.now();
+        post.tags = 'metal, metal crafts';
+        post.featured = true;
+        post.category= 'Metal Crafts';
+
+       var post2 = new Post();
+       post2._id ='59f1e69dd0ae514f10a24a82';
+       post2.title = 'Test 2';
+       post2.infoTitle=  'Test 2 Infotitle';
+       post2.price = 5.99;
+       post2.description = 'Test 2s description';
+       post2.date = Date.now();
+       post2.tags = 'wood, wood crafts';
+       post2.featured = true;
+       post2.category= 'Wood Crafts';
+
+       post.save(function (err) {
+           if(err)
+               console.log(err);
+       });
+       post2.save(function (err) {
+           if (err)
+               console.log(err);
+       });
 
    });
 
@@ -71,72 +65,73 @@ describe('Posts', function () {
        });
    });
 
-   describe('GET /TemporaryPosts/:postId', function () {
-       it('Should return the user with 1000 as an id', function (done) {
+   describe('GET /posts/:id', function () {
+       it('Should return the post with 59f9fb109bd9dc7f544cadfa as an id', function (done) {
            chai.request(server)
-               .get('/TemporaryPosts/1000')
+               .get('/posts/59f9fb109bd9dc7f544cadfa')
                .end(function (err, res) {
-                   expect(res.body).to.be.a('object');
-                   expect(res.body.category).to.equal("Cards");
-                   expect(res.body.title).to.equal("Edels Cards");
+                   expect(res.body.category).to.equal("Metal Crafts");
+                   expect(res.body.title).to.equal("Test 1");
                    done();
                });
        });
 
        it('Should fail when an invalid id is given', function (done) {
            chai.request(server)
-               .get('/TemporaryPosts/1003')
+               .get('/posts/59f9fb109bd9dc7f544')
                .end(function (err, res){
-                   expect(res.body).to.have.property('message').equal("Couldn't find post");
+                   expect(res.body).to.have.property('message')
+                       .equal("Post not found with id: 59f9fb109bd9dc7f544");
                    done();
                });
        });
 
    });
 
-   describe('GET /TemporaryPostsByTags/:tags', function (){
-      it('Should return the post with the tag Cards in the tags property', function (done){
+   describe('GET /postsbytags/:tags', function (){
+      it('Should return the post with the tag wood in the tags property', function (done){
           chai.request(server)
-              .get('/TemporaryPostsByTags/Cards')
+              .get('/postsbytags/wood')
               .end(function (err, res){
                  expect(res.body).to.be.a('array');
                  expect(res.body.length).to.equal(1);
-                 expect(res.body[0]).to.have.property('title').equal("Edels Cards");
-                 expect(res.body[0]).to.have.property('tags')
-                     .equal("Cards, Birthday, Birthdays, Christmas, deaths, births, wedding");
+                 expect(res.body[0].title).to.equal('Test 2');
+                 expect(res.body[0].category).to.equal('Wood Crafts');
                  done();
               });
       });
 
       it('Should return a message if the criteria does not meet', function (done){
           chai.request(server)
-              .get('/TemporaryPostsByTags/hello')
+              .get('/postsbytags/hello')
               .end(function (err, res) {
-                  expect(res.body).to.have.property('message').equal("No posts with these search criteria")
+                  expect(res.body).to.have.property('message').equal("No posts found with tag: hello");
                   done();
               });
       });
 
    });
 
-    describe('GET /TemporaryPostsByLowerPrice/:price', function (){
+    describe('GET /postsbylowerprice/:price', function (){
         it('Should return all the posts lower than the price given', function (done){
             chai.request(server)
-                .get('/TemporaryPostsByLowerPrice/9.99')
+                .get('/postsbylowerprice/10.00')
                 .end(function (err, res){
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(1);
-                    expect(res.body[0]).to.have.property('title').equal("Edels Cards");
-                    expect(res.body[0]).to.have.property('price').equal(7.99);
+                    expect(res.body.length).to.equal(2);
+                    expect(res.body[0]).to.have.property('title').equal("Test 1");
+                    expect(res.body[0]).to.have.property('price').equal(9.99);
+                    expect(res.body[1]).to.have.property('title').equal("Test 2");
+                    expect(res.body[1]).to.have.property('price').equal(5.99);
                     done();
                 });
         });
         
-        it('Should return no posts because price given is lower than both posts', function (done){
+        it('Should return no posts because price given is lower than any posts', function (done){
             chai.request(server)
-                .get('/TemporaryPostsByLowerPrice/4.99')
+                .get('/postsbylowerprice/2.99')
                 .end(function (err, res){
-                    expect(res.body).to.have.property('message').equal('No Posts Found with price lower than: 4.99')
+                    expect(res.body).to.have.property('message').equal('No posts found with price lower than: 2.99');
                     done();
                 });
         });

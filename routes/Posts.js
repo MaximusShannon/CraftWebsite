@@ -45,7 +45,7 @@ function findAllPostsLowerThanPriceGiven(allPosts, searchPrice){
     var postsWithRequiredPrice = [];
 
     for(var i = 0; i < allPosts.length; i++){
-        if(allPosts[i].price < searchPrice)
+        if(allPosts[i].price <= searchPrice)
             postsWithRequiredPrice.push(allPosts[i])
 
     }
@@ -125,7 +125,7 @@ router.findAllPosts = function (req, res) {
 
 router.findOne = function (req, res) {
 
-    Post.find({"_id": req.params.id}, function (err, post) {
+    Post.findById(req.params.id, function (err, post) {
 
         if(err)
             res.json({message: 'Post not found with id: ' +  req.params.id});
