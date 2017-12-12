@@ -21,17 +21,30 @@ test.describe('Section Page', function () {
     });
 
     test.beforeEach(function () {
-        driver.get('http://localhost:3000/#/homesection');
+        driver.get('http://localhost:3000/#/homecraftsection');
         driver.wait(until.elementLocated(pageSelector), 2000);
     });
 
     test.it('should display the main heading', function () {
-        driver.findElement(By.id('heading')).then(function (element) {
+        driver.findElement(By.tagName('h3')).then(function (element) {
             element.getText().then(function (text) {
-                expect(text).to.equal('Login to gain access to all features')
+                expect(text).to.equal('All Home Crafts');
             });
         });
     });
+
+	test.it('should display an Advert', function () {
+		driver.findElement(By.tagName('h4')).then(function (element) {
+			element.getText().then(function (text) {
+				expect(text).to.equal('Test Case 1');
+			});
+		});
+		driver.findElement(By.tagName('h5')).then(function (element) {
+			element.getText().then(function (text) {
+				expect(text).to.equal('Test Case 1');
+			});
+		});
+	});
 
     test.afterEach(function () {
         driver.manage().deleteAllCookies();
