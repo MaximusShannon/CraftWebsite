@@ -11,7 +11,7 @@
     }
 </style>
 
-<div ng-controller = "profileController as list">
+<div id="profile" ng-controller = "profileController as list">
 
     <div class="container">
 
@@ -24,9 +24,9 @@
 
             <div align="center" class="col-md-4">
 
-                <h4 style="" align="left">Profile Name:                                 {{displayData.userName}}</h4>
-                <h4 style="padding-top: 5%" align="left">Email:                         {{displayData.email}} </h4>
-                <h4 style="padding-top: 5%" align="left">Bio:                           {{displayData.bio}} </h4>
+                <h4 id="head1" style="" align="left">Profile Name:                                 {{displayData.userName}}</h4>
+                <h4 id="head2" style="padding-top: 5%" align="left">Email:                         {{displayData.email}} </h4>
+                <h4 id="head3" style="padding-top: 5%" align="left">Bio:                           {{displayData.bio}} </h4>
 
             </div>
             <div class="col-md-4"></div>
