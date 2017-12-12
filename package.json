@@ -29,9 +29,11 @@
     "babel-loader": "^6.4.1",
     "chai-http": "^2.0.1",
     "chai-things": "^0.2.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "html-webpack-plugin": "^2.30.1",
     "istanbul": "^0.4.5",
-    "selenium-webdriver": "3.3.0",
     "mocha": "^3.4.2",
+    "selenium-webdriver": "3.3.0",
     "webpack": "^1.15.0"
   }
 }
